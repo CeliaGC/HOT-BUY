@@ -3,7 +3,7 @@
     {
       "name": "Silla ordenador",
       "price": "99€",
-      "img": "",
+      "img": "../src/assets/img/Silla-Harry_Potter.jpg",
       "category": "Mobiliario oficina",
       "product-status": "Nuevo",
       "unit": "2",
@@ -14,7 +14,7 @@
     {
       "name": "Harry Potter Paraguas Plegable Compacto",
       "price": "10€",
-      "img": "",
+      "img": "../src/assets/img/paraguas-Harry_Potter.jpg",
       "category": "Accesorios",
       "product-status": "Nuevo",
       "unit": "5",
