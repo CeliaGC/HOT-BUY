@@ -1,0 +1,26 @@
+{
+  "products": [
+    {
+      "name": "Silla ordenador",
+      "price": "99€",
+      "img": "",
+      "category": "Mobiliario oficina",
+      "product-status": "Nuevo",
+      "unit": "2",
+      "description": "Silla gaming original, asiento de oficina Licencia oficial. Asiento ultraconfortable con respaldo ergonómico y reposabrazos acolchados. Acabado de alta calidad con bordados y costuras, cubierta de piel sintética de fácil cuidado. Robusta estructura de acero y ajuste de altura con sistema de jack de clase 3. Función de silla mecedora, rocking-chair. Silla de juego de diseño exclusivo para eSports bajo licencia oficial.",
+      "date": "2023-02-01",
+      "id": 1
+    },
+    {
+      "name": "Harry Potter Paraguas Plegable Compacto",
+      "price": "10€",
+      "img": "",
+      "category": "Accesorios",
+      "product-status": "Nuevo",
+      "unit": "5",
+      "description": "Paraguas Adulto, Estructura Alta Resistencia, Paraguas Hogwarts, Paraguas Grande 8 Varillas.",
+      "date": "2023-02-02",
+      "id": 2
+    }
+  ]
+}
