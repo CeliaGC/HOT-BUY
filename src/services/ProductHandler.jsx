@@ -17,33 +17,39 @@ const ProductHandler = {
             "date": newProduct.date,
             "id": ""
         }
-        taskService.submitTask(task);
-        return task;
+        ProductService.submitProduct(product);
+        return product;
     },
-    loadTasks(){
-        return taskService.getTasks();
+    loadProducts(){
+        return ProductService.getProducts();
     },
-    loadTask(id) {
-        return taskService.getTask(id);
+    loadProduct(id) {
+        return ProductService.getProduct(id);
     },
-    deleteTask(id){
-        return taskService.deleteTask(id);
+    deleteProduct(id){
+        return ProductService.deleteProduct(id);
     },
-    updateTask(newTask){
-        if (!newTask) {
+    updateProduct(newProduct){
+        if (!newProduct) {
             return;
         }
 
-        let newTaskModel = {
-            "name": newTask.name,
-            "done": false,
-            "id": newTask.id
+        let newProductModel = {
+            "name": newProduct.name,
+            "price": newProduct.price,
+            "img": newProduct.img,
+            "category": newProduct.category,
+            "productStatus": newProduct.productStatus,
+            "unit": newProduct.unit,
+            "description": newProduct.description,
+            "date": newProduct.date,
+            "id": newProduct.id
         }
 
-        let id = newTaskModel.id;
+        let id = newProductModel.id;
 
-        return taskService.updateTask(id, newTaskModel);
+        return ProductService.updateProduct(id, newProductModel);
     }
 }
 
-export 
+export default ProductHandler
