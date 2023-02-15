@@ -57,7 +57,7 @@ function MyForm() {
         </fieldset>
       </fieldset>
 
-      <input id="submit" type="submit" value="AGREE" />
+      <input id="submit" type="submit" value="SUBMIT" />
       <input id="reset" type="reset" value="RESET" />
 
     </form>
