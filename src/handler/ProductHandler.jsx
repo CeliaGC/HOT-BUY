@@ -1,4 +1,4 @@
-import ProductService from "./ProductServices";
+import ProductService from "../services/ProductServices";
 
 const ProductHandler = {
     addProduct(newProduct){
