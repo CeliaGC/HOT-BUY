@@ -11,11 +11,11 @@ function MyForm() {
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
       <fieldset>
-        <input id="productName" placeholder='Product Name' {...register("productName", { required: true })} />
-        {errors.productName && <span>This field is required</span>}
+        <input id="productName" placeholder='Nombre del producto' {...register("productName", { required: true })} />
+        {errors.productName && <span>Debe rellenar este campo</span>}
 
-        <input id="Category" placeholder='Category'{...register("category", { required: true })} />
-        {errors.category && <span>This field is required</span>}
+        <input id="Category" placeholder='Categoría'{...register("category", { required: true })} />
+        {errors.category && <span>Debe rellenar este campo</span>}
         {/* Le podemos poner un dropdown:
        Category:
         <select id="Category" name="dropdown">
@@ -27,38 +27,37 @@ function MyForm() {
           <option value="5">Pets</option>
         </select>*/}
 
-        <input id="Price" placeholder='Price' {...register("price", { required: true })} />
-        {errors.price && <span>This field is required</span>}
+        <input id="Price" placeholder='Precio' {...register("price", { required: true })} />
+        {errors.price && <span>Debe rellenar este campo</span>}
 
-        <input id="Units" placeholder='Units' {...register("units", { required: true })} />
-        {errors.units && <span>This field is required</span>}
+        <input id="Units" placeholder='Unidades' {...register("units", { required: true })} />
+        {errors.units && <span>Debe rellenar este campo</span>}
 
-        <input id="Description" placeholder='Description' {...register("description", { required: true })} />
-        {errors.description && <span>This field is required</span>}
+        <input id="Description" placeholder='Descripción' {...register("description", { required: true })} />
+        {errors.description && <span>Debe rellenar este campo</span>}
 
         {/* Le podemos poner un textarea: 
       <textarea id="Description" rows="6" cols="8" placeholder="Description. Maximum 250 characters."
       minlength="0" maxlength="250" pattern="[A-Za-z0-9]" required></textarea> */}
 
-        <input id="productState" placeholder='Product State'{...register("productState", { required: true })} />
-        {errors.productState && <span>This field is required</span>}
+        <input id="productState" placeholder='Estado del producto'{...register("productState", { required: true })} />
+        {errors.productState && <span>Debe rellenar este campo</span>}
 
         {/* Le podemos poner un radio */}
 
         <fieldset>
 
-          <input id="productPicture" placeholder='Product Picture' type="file" {...register("productPicture", { required: true })} />
-          {errors.productPicture && <span>This field is required</span>}
+          <input id="productPicture" placeholder='Foto del producto' type="file" {...register("productPicture", { required: true })} />
+          {errors.productPicture && <span>Debe rellenar este campo</span>}
 
-          <label for="news" name="news">
-          <input id="terms" placeholder='terms' type="checkbox" value="checkbox" class="inline" {...register("terms", { required: true })} />I accept the terms and conditions
-          {errors.terms && <span>This field is required</span>}</label>
+          <input id="terms" placeholder='terms' type="checkbox" value="checkbox" class="inline" {...register("terms", { required: true })} />Acepto los términos y condiciones
+          {errors.terms && <span>Debe rellenar este campo</span>}
         
         </fieldset>
       </fieldset>
 
-      <input id="submit" type="submit" value="SUBMIT" />
-      <input id="reset" type="reset" value="RESET" />
+      <input id="submit" type="submit" value="ENVIAR" />
+      <input id="reset" type="reset" value="RESTABLECER" />
 
     </form>
   );
