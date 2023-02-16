@@ -1,11 +1,12 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
+
 import './index.css'
 import MyForm from './components/Form'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    
-    <MyForm/>
+    <Product />
+    <MyForm />
   </React.StrictMode>,
 )
