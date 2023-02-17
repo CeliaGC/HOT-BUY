@@ -19,8 +19,111 @@
       "productStatus": "Nuevo",
       "unit": "5",
       "description": "Paraguas Adulto, Estructura Alta Resistencia, Paraguas Hogwarts, Paraguas Grande 8 Varillas.",
-      "date": "2023-02-02",
+      "date": "2023-02-10",
       "id": 2
+    },
+    {
+      "price": "10",
+      "category": "Seguridad Bebé",
+      "description": "Espejo de asiento de coche más seguro con vista cristalina, a prueba de roturas, espejo retrovisor ajustable",
+      "id": 3
+    },
+    {
+      "price": "10",
+      "category": "Seguridad Bebé",
+      "description": "Espejo de asiento de coche más seguro con vista cristalina, a prueba de roturas, espejo retrovisor ajustable",
+      "id": 4
+    },
+    {
+      "name": "Espejo retrovisor bebé",
+      "price": "10",
+      "img": {
+        "0": {}
+      },
+      "category": "Seguridad Bebé",
+      "productStatus": "Nuevo",
+      "unit": "20",
+      "description": "Espejo de asiento de coche más seguro con vista cristalina, a prueba de roturas, espejo retrovisor ajustable",
+      "id": 5
+    },
+    {
+      "name": "Espejo retrovisor bebé",
+      "price": "10",
+      "img": {
+        "0": {}
+      },
+      "category": "Seguridad Bebé",
+      "productStatus": "Nuevo",
+      "unit": "20",
+      "description": "Espejo de asiento de coche más seguro con vista cristalina, a prueba de roturas, espejo retrovisor ajustable",
+      "id": 6
+    },
+    {
+      "name": "Espejo retrovisor bebé",
+      "price": "10",
+      "img": {
+        "0": {}
+      },
+      "category": "Seguridad Bebé",
+      "productStatus": "Nuevo",
+      "unit": "20",
+      "description": "Espejo de asiento de coche más seguro con vista cristalina, a prueba de roturas, espejo retrovisor ajustable",
+      "id": 7
+    },
+    {
+      "name": "Espejo retrovisor bebé",
+      "price": "10",
+      "img": {
+        "0": {}
+      },
+      "category": "Seguridad Bebé",
+      "productStatus": "Nuevo",
+      "unit": "20",
+      "description": "Espejo de asiento de coche más seguro con vista cristalina, a prueba de roturas, espejo retrovisor ajustable",
+      "id": 8
+    },
+    {
+      "id": 9
+    },
+    {
+      "id": 10
+    },
+    {
+      "id": 11
+    },
+    {
+      "id": 12
+    },
+    {
+      "id": 13
+    },
+    {
+      "id": 14
+    },
+    {
+      "id": 15
+    },
+    {
+      "id": 16
+    },
+    {
+      "id": 17
+    },
+    {
+      "id": 18
+    },
+    {
+      "id": 19
+    },
+    {
+      "name": "Espejo retrovisor bebé",
+      "price": "10",
+      "img": null,
+      "category": "Seguridad Bebé",
+      "productStatus": "Nuevo",
+      "unit": "20",
+      "description": "Espejo de asiento de coche más seguro con vista cristalina, a prueba de roturas, espejo retrovisor ajustable",
+      "id": 20
     }
   ]
 }
