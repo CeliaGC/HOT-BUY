@@ -2,20 +2,22 @@ import ProductService from "../services/ProductServices";
 
 const ProductHandler = {
     addProduct(newProduct){
+        // console.log(newProduct);
         if (!newProduct) {
             return;
         }
 
         let product = {
-            "name": newProduct.name,
+            "name": newProduct.productName,
             "price": newProduct.price,
-            "img": newProduct.img,
+            "img": newProduct.productPicture,
             "category": newProduct.category,
-            "productStatus": newProduct.productStatus,
-            "unit": newProduct.unit,
+            "productStatus": newProduct.productState,
+            "unit": newProduct.units,
             "description": newProduct.description,
             "date": newProduct.date,
             "id": ""
+
         }
         ProductService.submitProduct(product);
         return product;
@@ -35,12 +37,12 @@ const ProductHandler = {
         }
 
         let newProductModel = {
-            "name": newProduct.name,
+            "name": newProduct.productName,
             "price": newProduct.price,
-            "img": newProduct.img,
+            "img": newProduct.productPicture,
             "category": newProduct.category,
-            "productStatus": newProduct.productStatus,
-            "unit": newProduct.unit,
+            "productStatus": newProduct.productState,
+            "unit": newProduct.units,
             "description": newProduct.description,
             "date": newProduct.date,
             "id": newProduct.id
@@ -53,3 +55,4 @@ const ProductHandler = {
 }
 
 export default ProductHandler
+
