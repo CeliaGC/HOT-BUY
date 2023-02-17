@@ -1,5 +1,6 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
+
 import './index.css'
 
 import NavbarHotBuy from './components/Navbar'
@@ -8,9 +9,7 @@ import MyForm from './components/Form'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <NavbarHotBuy />
-    {/* <HeaderHotBuy /> */}
-    {/* <Product /> */}
+    <Product />
     <MyForm />
   </React.StrictMode>,
 )
