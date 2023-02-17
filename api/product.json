@@ -12,7 +12,7 @@
       "id": 1
     },
     {
-      "name": "Harry Potter Paraguas Plegable Compacto",
+      "name": "Paraguas Plegable Compacto Harry Potter",
       "price": 10,
       "img": "../src/assets/img/paraguas-Harry_Potter.jpg",
       "category": "Accesorios",
@@ -21,6 +21,18 @@
       "description": "Paraguas Adulto, Estructura Alta Resistencia, Paraguas Hogwarts, Paraguas Grande 8 Varillas.",
       "date": "2023-02-10",
       "id": 2
+    },
+    {
+      "name": "Espejo retrovisor bebé",
+      "price": "10",
+      "img": {
+        "0": {}
+      },
+      "category": "Seguridad Bebé",
+      "productStatus": "Nuevo",
+      "unit": "20",
+      "description": "Espejo de asiento de coche más seguro con vista cristalina, a prueba de roturas, espejo retrovisor ajustable",
+      "id": 3
     }
   ]
 }

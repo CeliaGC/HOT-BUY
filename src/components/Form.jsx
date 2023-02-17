@@ -4,41 +4,30 @@ import React, { useState } from 'react';
 import ProductHandler from '../handler/ProductHandler';
 
 function MyForm() {
-    const { register, handleSubmit, formState: { errors }, setValue } = useForm();
+    const { register, handleSubmit, formState: { errors }, setValue, getValues  } = useForm();
 
-    const handleImage = (data) => {
-      // console.log(data)
-      // console.log(register.productPicture[0]);
-      const picture = data.productPicture[0];
-      const reader = new FileReader();
-      // console.log(reader)
-      let parsedData = {}
-        reader.readAsDataURL(picture);
-        // reader.onload = () => {
-            parsedData = {
-              ...data,
-              productPicture: reader.result
-
-            }
-            // console.log(parsedData)
-
+    // const handleImage = (data) => {
+    //   // console.log(data)
+    //   // console.log(register.productPicture[0]);
+    //   const picture = data.productPicture[0];
+    //   const reader = new FileReader();
+    //   // console.log(reader)
+    //   let parsedData = {}
+    //     reader.readAsDataURL(picture);
+    //     reader.onload = function (event) {
+    //         parsedData = {
+    //           ...data,
+    //           productPicture: reader.result
+    //         }
+    //         console.log(parsedData)
+    //         console.log(event.target.result)
+    //         return event.target.result
+    //       }
         
-        return parsedData
-        // console.log(parsedData)
+    //     console.log()
       
-      // return Image;
+    //   // return Image;
       
-    }
-    // const [value, setValue] = useState(null);
-
-    // const handleChange = (event) => {
-    //     const file = event.target.files[0];
-    //     const reader = new FileReader();
-    //     reader.readAsDataURL(file);
-    //     reader.onload = () => {
-    //         setValue(reader.result);
-    //     };
-    
     // }
 
     // const handleSubmit = async (event) => {
@@ -46,14 +35,26 @@ function MyForm() {
     //     ProductHandler.addProduct(value);
     // };
 
+    const handleImageChange = (event) => {
+      const picture = event.target.files[0];
+      const reader = new FileReader();
+      reader.readAsDataURL(picture);
+      reader.onload = () => {
+        setValue("productPicture", reader.result);
+      };
+    }
   
     const onSubmit = (data) => {
-    // console.log(data);  
-    let parsedData = handleImage(data)
-    console.log(parsedData)
-    return ProductHandler.addProduct(parsedData)
-    
+      ProductHandler.addProduct(data)
     }
+  
+    // const onSubmit = (data) => {
+    // console.log(data);  
+    // let parsedData = handleImage(data)
+    // console.log(parsedData)
+    // return ProductHandler.addProduct(parsedData)
+    
+    // }
 
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
