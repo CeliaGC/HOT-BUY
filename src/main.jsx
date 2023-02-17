@@ -5,10 +5,12 @@ import './index.css'
 import MyForm from './components/Form'
 import ProductShort from './components/ProductShort'
 
+
+
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     
-    <MyForm/>
+    {/* <MyForm/> */}
     <ProductShort/>
   </React.StrictMode>,
 )

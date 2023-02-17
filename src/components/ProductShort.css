@@ -1,0 +1,121 @@
+body{
+    width: 22.5rem;
+    height: 46.25rem;
+    display: flex;
+    flex-direction: column;
+}
+
+#productShort{
+    display: flex;
+    flex-direction: column;
+    width: 22.5rem;
+    height: 11.125rem ;
+}
+
+.margin {
+    width: auto;
+    height: 1.4375rem;
+}
+
+#product {
+    width: 100%;
+    height: 8.3125rem;
+    background-color: rgba(215, 201, 240, 1);
+    display: flex;
+    flex-direction: row;
+}
+
+#img {
+    height: 8.3125rem;
+    width: 24.17%;
+    position:relative;
+}
+
+#imgProduct {
+    height: 100%;
+    width: 100%;
+}
+
+#stock {
+    position:absolute;
+    width: 1.4375rem;
+    height: 1.1875rem;
+    border-radius: .1875rem;
+    border: 0.0625rem solid  rgba(231, 144, 54, 1);
+    background-color: rgba(240, 201, 168, 1);
+    bottom: 3%;
+    right: 5%;
+    text-align: center;
+}
+
+#description{
+    display: grid;
+    grid-template-columns: 2.4375rem 3.6875rem .625rem 3.125rem .625rem 3.125rem 3.4375rem;
+    grid-template-rows: .9375rem 1.75rem 1.25rem 2.3125rem 2.0625rem;
+    width: 75.83%;
+}
+
+/* .grid{
+    border: black solid 1px;
+
+} */
+
+#g1{
+    grid-column-start: 1;
+    grid-column-end: 8;
+}
+
+#name {
+    grid-column-start: 2;
+    grid-column-end: 7;
+    background-color: rgba(248, 241, 241, 1);
+    border-radius: .1875rem;
+    text-align: center;
+    border: 0;
+}
+
+#g5 {
+    grid-row-start: 3;
+    grid-row-end: 6;
+}
+
+#g6{
+    grid-column-start: 2;
+    grid-column-end: 7;
+}
+
+ /* #g7 {
+    grid-row-start: 3;
+    grid-row-end: 6;
+}  */
+
+#price {
+    grid-column-start: 2;
+    grid-column-end:3;
+    background-color: rgba(248, 241, 241, 1);
+    border-radius: .1875rem;
+    text-align: center;
+    text-justify:distribute;
+    border: 0;
+}
+
+#g13 {
+    grid-column-start: 2;
+    grid-column-end: 7;
+}
+
+.button {
+    background-color: rgba(231, 144, 54, 1); 
+    background-repeat: no-repeat ;
+    background-position: center;
+}
+
+#edit {
+    background-image:url(../../src/assets/img/🦆\ emoji\ _pencil_.png);
+    background-size: 55%;
+}
+
+#delete {
+    background-image:url(../../src/assets/img/🦆\ emoji\ _delete_.png);
+    background-size: 45%;
+}
