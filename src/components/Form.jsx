@@ -1,20 +1,68 @@
-// import { useForm } from 'react-hook-form';
+import { useForm } from 'react-hook-form';
 import './Form.css'
+import React, { useState } from 'react';
+import ProductHandler from '../handler/ProductHandler';
 
 function MyForm() {
-  const { register, handleSubmit, formState: { errors } } = useForm();
+    const { register, handleSubmit, formState: { errors }, setValue, getValues  } = useForm();
 
-  const onSubmit = (data) => {
-    console.log(data);
-  }
+    // const handleImage = (data) => {
+    //   // console.log(data)
+    //   // console.log(register.productPicture[0]);
+    //   const picture = data.productPicture[0];
+    //   const reader = new FileReader();
+    //   // console.log(reader)
+    //   let parsedData = {}
+    //     reader.readAsDataURL(picture);
+    //     reader.onload = function (event) {
+    //         parsedData = {
+    //           ...data,
+    //           productPicture: reader.result
+    //         }
+    //         console.log(parsedData)
+    //         console.log(event.target.result)
+    //         return event.target.result
+    //       }
+        
+    //     console.log()
+      
+    //   // return Image;
+      
+    // }
+
+    // const handleSubmit = async (event) => {
+    //     event.preventDefault();
+    //     ProductHandler.addProduct(value);
+    // };
+
+    const handleImageChange = (event) => {
+      const picture = event.target.files[0];
+      const reader = new FileReader();
+      reader.readAsDataURL(picture);
+      reader.onload = () => {
+        setValue("productPicture", reader.result);
+      };
+    }
+  
+    const onSubmit = (data) => {
+      ProductHandler.addProduct(data)
+    }
+  
+    // const onSubmit = (data) => {
+    // console.log(data);  
+    // let parsedData = handleImage(data)
+    // console.log(parsedData)
+    // return ProductHandler.addProduct(parsedData)
+    
+    // }
 
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
       <fieldset>
-        <input id="productName" placeholder='Nombre del producto' {...register("productName", { required: true })} />
+        <input  id="name" placeholder='Nombre del producto' {...register("productName", { required: true })} />
         {errors.productName && <span>Debe rellenar este campo</span>}
 
-        <input id="Category" placeholder='Categoría'{...register("category", { required: true })} />
+        <input id="category" placeholder='Categoría'{...register("category", { required: true })} />
         {errors.category && <span>Debe rellenar este campo</span>}
         {/* Le podemos poner un dropdown:
        Category:
@@ -27,30 +75,30 @@ function MyForm() {
           <option value="5">Pets</option>
         </select>*/}
 
-        <input id="Price" placeholder='Precio' {...register("price", { required: true })} />
+        <input id="price" placeholder='Precio' {...register("price", { required: true })} />
         {errors.price && <span>Debe rellenar este campo</span>}
 
-        <input id="Units" placeholder='Unidades' {...register("units", { required: true })} />
+        <input id="unit" placeholder='Unidades' {...register("units", { required: true })} />
         {errors.units && <span>Debe rellenar este campo</span>}
 
-        <input id="Description" placeholder='Descripción' {...register("description", { required: true })} />
+        <input id="description" placeholder='Descripción' {...register("description", { required: true })} />
         {errors.description && <span>Debe rellenar este campo</span>}
 
         {/* Le podemos poner un textarea: 
       <textarea id="Description" rows="6" cols="8" placeholder="Description. Maximum 250 characters."
       minlength="0" maxlength="250" pattern="[A-Za-z0-9]" required></textarea> */}
 
-        <input id="productState" placeholder='Estado del producto'{...register("productState", { required: true })} />
+        <input id="productStatus" placeholder='Estado del producto'{...register("productState", { required: true })} />
         {errors.productState && <span>Debe rellenar este campo</span>}
 
         {/* Le podemos poner un radio */}
 
         <fieldset>
 
-          <input id="productPicture" placeholder='Foto del producto' type="file" {...register("productPicture", { required: true })} />
+          <input id="img" placeholder='Foto del producto' type="file" {...register("productPicture", { required: true })} />
           {errors.productPicture && <span>Debe rellenar este campo</span>}
 
-          <input id="terms" placeholder='terms' type="checkbox" value="checkbox" class="inline" {...register("terms", { required: true })} />Acepto los términos y condiciones
+          <input id="Terms" placeholder='terms' type="checkbox" value="checkbox" className="inline" {...register("terms", { required: true })} />Acepto los términos y condiciones
           {errors.terms && <span>Debe rellenar este campo</span>}
         
         </fieldset>
@@ -61,5 +109,7 @@ function MyForm() {
 
     </form>
   );
+  
 }
+
 export default MyForm
