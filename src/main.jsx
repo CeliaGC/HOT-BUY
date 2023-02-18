@@ -12,6 +12,5 @@ ReactDOM.createRoot(document.getElementById('root')).render(
     <MyForm/>
     <ProductShort/>
 
-    <MyForm />
   </React.StrictMode>,
 )
