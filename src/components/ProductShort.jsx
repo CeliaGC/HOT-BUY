@@ -1,3 +1,4 @@
+import { forEach } from "lodash";
 import { useState, useEffect } from "react";
 import productHandler from '../handler/productHandler';
 import './ProductShort.css'
@@ -11,17 +12,34 @@ export default function productShort() {
 
     const getData = async () => {
         const data = await productHandler.loadProducts();
-
         setProducts(data)
     }
 
+    const deleteShort = (id) => {
+        
+        setProducts(products.filter((p) => p.id !== id));
+    }
+
+    function editProduct() {
+        console.log("Form opens")
+    }
+    // function DeleteProduct() {
+    //     const [showDiv, setShowdiv] = useState(true);
+
+    //     const clickErase = () => {
+    //         setShowdiv(false);
+    //     }
+    // }
+
+
 
     return (
-        <div id="body">
+        <container>
             {
                 products.map(item =>(
 
                 (<div id="productShort" key={item.id}>
+                    
                     <div className="margin"></div>
                     <div id="product">
                         <div id="img">
@@ -40,9 +58,9 @@ export default function productShort() {
                             <div className="grid" id="g7"></div>
                             <div className="grid" id="itemPrice"><p>{item.price + ' €'}</p></div>
                             <div className="grid" id="g9"></div>
-                            <button className="button" id="edit"></button>
+                            <button onClick={editProduct}  className="button" id="edit"></button>
                             <div className="grid" id="g11"></div>
-                            <button className="button" id="delete"></button>
+                            <button onClick={() => deleteShort(item.id)}className="button" id="delete"></button>
                             <div className="grid" id="g13"></div>
                         </div>
                     </div>
@@ -51,11 +69,9 @@ export default function productShort() {
 
                  </div>)
                 ))
-                
-                
 
             }
-        </div>
+        </container>
     )
 }
 
