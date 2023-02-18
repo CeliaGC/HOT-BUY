@@ -1,7 +1,7 @@
 {
   "products": [
     {
-      "name": "Desk chair",
+      "name": "Silla de escritorio",
       "price": 99,
       "img": "../src/assets/img/Silla-Harry_Potter.jpg",
       "category": "Mobiliario oficina",
@@ -12,7 +12,7 @@
       "id": 1
     },
     {
-      "name": "Harry Potter umbrella",
+      "name": "Paraguas Harry Potter",
       "price": 10,
       "img": "../src/assets/img/paraguas-Harry_Potter.jpg",
       "category": "Accesorios",
