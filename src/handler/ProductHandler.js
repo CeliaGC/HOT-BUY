@@ -13,9 +13,9 @@ const ProductHandler = {
             "img": newProduct.productPicture,
             "category": newProduct.category,
             "productStatus": newProduct.productState,
-            "unit": newProduct.units,
+            "unit": newProduct.unit,
             "description": newProduct.description,
-            "date": newProduct.date,
+            "date": new Date(),
             "id": ""
 
         }
@@ -42,9 +42,9 @@ const ProductHandler = {
             "img": newProduct.productPicture,
             "category": newProduct.category,
             "productStatus": newProduct.productState,
-            "unit": newProduct.units,
+            "unit": newProduct.unit,
             "description": newProduct.description,
-            "date": newProduct.date,
+            "date": new Date(),
             "id": newProduct.id
         }
 
