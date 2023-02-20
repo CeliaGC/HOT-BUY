@@ -1,10 +1,12 @@
+import {NavLink} from 'react-router-dom';
 import Button from 'react-bootstrap/Button';
 import Container from 'react-bootstrap/Container';
 import Form from 'react-bootstrap/Form';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 
-function NavbarHotBuy() {
+
+function navbarHotBuy() {
   return (
     <>
     <Navbar bg="light" >
@@ -12,7 +14,7 @@ function NavbarHotBuy() {
         <Navbar.Brand href="#NavbarHotBuy"> <img alt="" src="../../src/assets/img/logo.png" width="30" height="30" className="d-inline-block align-top"/>{' '}
             HOT BUY</Navbar.Brand>
           <Nav className="me-auto">
-            <Nav.Link href="#uploadProduct">Subir producto</Nav.Link>
+            <NavLink href="#uploadProduct">Subir producto</NavLink>
           </Nav>
           <Form className="d-flex">
             <Form.Control
@@ -29,4 +31,4 @@ function NavbarHotBuy() {
   );
 }
 
-export default NavbarHotBuy;
+export default navbarHotBuy;

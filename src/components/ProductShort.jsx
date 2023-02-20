@@ -1,7 +1,8 @@
-import { forEach } from "lodash";
+// import { forEach } from "lodash";
 import { useState, useEffect } from "react";
 import productHandler from '../handler/productHandler';
-import './ProductShort.css'
+import './ProductShort.css';
+import 
 
 export default function productShort() {
     const [products, setProducts] = useState([])
