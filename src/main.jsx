@@ -8,6 +8,9 @@ import './index.css'
 import navbarHotBuy from './components/Navbar'
 //import HeaderHotBuy from './components/Header'
 import MyForm from './components/Form'
+import ProductShort from './components/ProductShort'
+
+
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
@@ -16,5 +19,8 @@ ReactDOM.createRoot(document.getElementById('root')).render(
     <MyForm />
     <RouterProvider router={router}/>
     
+    
+    {/* <MyForm/> */}
+    <ProductShort/>
   </React.StrictMode>,
 )
