@@ -8,11 +8,13 @@ import ProductShort from './components/ProductShort'
 
 
 
+
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     
     {/* <MyForm/> */}
     <ProductShort/>
+    {/* <ProductDetail/> */}
 
   </React.StrictMode>,
 )

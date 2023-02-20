@@ -1,6 +1,5 @@
-import { forEach } from "lodash";
 import { useState, useEffect } from "react";
-import productHandler from '../handler/productHandler';
+import ProductHandler from "../handler/productHandler";
 import './ProductShort.css'
 
 export default function productShort() {
@@ -11,28 +10,34 @@ export default function productShort() {
     },[]);
 
     const getData = async () => {
-        const data = await productHandler.loadProducts();
+        const data = await ProductHandler.loadProducts();
         setProducts(data)
     }
 
-    const deleteShort = (id) => {
+    const deleteShort = async (id) => {
         
         setProducts(products.filter((p) => p.id !== id));
+        await ProductHandler.deleteProduct(id)
+        
     }
+
+    // function onSubmit(){
+    //     const deleted = products.filter((p) => p.id !== id)
+    //     ProductHandler.deleteProduct(deleted)
+
+    // }
 
     function editProduct() {
         console.log("Form opens")
     }
-    // function DeleteProduct() {
-    //     const [showDiv, setShowdiv] = useState(true);
+    // const getDetail =  (id) => {
+        
+    //     products.find(p => p.id == id);
+    //     console.log(id)   
+    //     console.log(products)
+        
 
-    //     const clickErase = () => {
-    //         setShowdiv(false);
-    //     }
     // }
-
-
-
     return (
         <container>
             {
@@ -41,9 +46,11 @@ export default function productShort() {
                 (<div id="productShort" key={item.id}>
                     
                     <div className="margin"></div>
+
+
                     <div id="product">
                         <div id="img">
-                            <img id="imgProduct" src={item.img}></img>
+                        <img onClick={() => getDetail(item.id)}id="imgProduct" src={item.img}></img>
                             <div id="itemStock"><p>{item.unit}</p></div> 
                         </div>
 
@@ -61,6 +68,7 @@ export default function productShort() {
                             <button onClick={editProduct}  className="button" id="edit"></button>
                             <div className="grid" id="g11"></div>
                             <button onClick={() => deleteShort(item.id)}className="button" id="delete"></button>
+                            {/* <input onSubmit={onSubmit(item.id)} type="submit" className="button" id="delete"/> */}
                             <div className="grid" id="g13"></div>
                         </div>
                     </div>
