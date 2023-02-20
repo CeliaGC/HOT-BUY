@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import ProductHandler from "../handler/productHandler";
 import './ProductShort.css'
+import {Link} from 'react-router-dom';
 
 export default function productShort() {
     const [products, setProducts] = useState([])
@@ -21,15 +22,6 @@ export default function productShort() {
         
     }
 
-    // function onSubmit(){
-    //     const deleted = products.filter((p) => p.id !== id)
-    //     ProductHandler.deleteProduct(deleted)
-
-    // }
-
-    function editProduct() {
-        console.log("Form opens")
-    }
     // const getDetail =  (id) => {
         
     //     products.find(p => p.id == id);
@@ -50,7 +42,8 @@ export default function productShort() {
 
                     <div id="product">
                         <div id="img">
-                        <img onClick={() => getDetail(item.id)}id="imgProduct" src={item.img}></img>
+                            <Link to="/DetailedView"><img id="imgProduct" src={item.img}></img></Link>
+                        
                             <div id="itemStock"><p>{item.unit}</p></div> 
                         </div>
 
@@ -65,7 +58,7 @@ export default function productShort() {
                             <div className="grid" id="g7"></div>
                             <div className="grid" id="itemPrice"><p>{item.price + ' €'}</p></div>
                             <div className="grid" id="g9"></div>
-                            <button onClick={editProduct}  className="button" id="edit"></button>
+                            <button className="button" id="edit"></button>
                             <div className="grid" id="g11"></div>
                             <button onClick={() => deleteShort(item.id)}className="button" id="delete"></button>
                             {/* <input onSubmit={onSubmit(item.id)} type="submit" className="button" id="delete"/> */}
