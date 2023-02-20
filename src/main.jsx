@@ -15,9 +15,9 @@ import ProductShort from './components/ProductShort'
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     {/* <Product /> */}
-    < navbarHotBuy/>
+    {/* < navbarHotBuy/>
     <MyForm />
-    <RouterProvider router={router}/>
+    <RouterProvider router={router}/> */}
     
     
     {/* <MyForm/> */}
