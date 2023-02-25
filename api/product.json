@@ -1,7 +1,7 @@
 {
   "products": [
     {
-      "name": "Silla ordenador",
+      "name": "Silla de escritorio",
       "price": 99,
       "img": "../src/assets/img/Silla-Harry_Potter.jpg",
       "category": "Mobiliario oficina",
