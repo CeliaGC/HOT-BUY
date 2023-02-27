@@ -1,6 +1,9 @@
 import { useState } from "react";
+import Alert from 'react-bootstrap/Alert';
+import Button from 'react-bootstrap/Button';
 import { useLoaderData } from "react-router-dom";
 import ProductHandler from "../handler/ProductHandler";
+import { Link } from "react-router-dom"
 import './Form.css'
 import '../../src/index.css'
 
@@ -56,6 +59,16 @@ const FormEditProduct = () => {
             ProductHandler.updateProduct(id, updatedProduct);
         };
 
+        const [showAlert, setShowAlert] = useState(false);
+
+        const handleAgregarClick = () => {
+            setShowAlert(true);
+        }
+
+        const handleAlertClose = () => {
+            setShowAlert(false);
+        }
+
     return (
         <>
         <h2>estás editando el producto:</h2>
@@ -64,6 +77,7 @@ const FormEditProduct = () => {
             <fieldset>
                 <label for="productName">Nombre del producto</label>
                 <input onChange={handleNameChange} id="productName" placeholder={product.name} />
+                
                 <label for="category">Categoría del producto</label>
                 <select onChange={handleCategoryChange} id="category" name="category" placeholder={product.category}>
                 <option value="selecciona">{product.category}</option>
@@ -73,13 +87,18 @@ const FormEditProduct = () => {
                 <option value="mobiliario">Mobiliario</option>
                 <option value="menaje">Menaje</option>
                 <option value="deporte">Deporte</option>
+                <option value="deporte">Tecnología</option>
                 </select>
+
                 <label for="price">Precio del producto</label>
                 <input onChange={handlePriceChange} id="price" placeholder={product.price} />
+                
                 <label for="units">Unidades del producto</label>
                 <input onChange={handleUnitChange} id="units" placeholder={product.unit} />
+                
                 <label for="description">Descripción del producto</label>
                 <input onChange={handleDescriptionChange} id="description" placeholder={product.description} />
+                
                 <label for="productState">Estado del producto</label>
                 <select onChange={handleProductStatusChange} id="productState" name="productState" placeholder={product.productStatus}>
                 <option value="selecciona">{product.productStatus}</option>
@@ -96,9 +115,22 @@ const FormEditProduct = () => {
                 </fieldset>
             </fieldset>
             <div id="buttons">
-            <input id="submit" type="submit" value="GUARDAR" />
-            <input id="reset" type="reset" value="LIMPIAR" />
+            <input onClick={handleAgregarClick} id="submit" type="submit" value="ACTUALIZAR" />
+            <Link to="/Products" className="nav--item"><input id="back" type="button" value="VOLVER" /></Link>
             </div>
+
+            <Alert show={showAlert} variant="success" onClose={handleAlertClose} dismissible>
+        <Alert.Heading>Producto actualizado en su cuenta</Alert.Heading>
+        <p>
+          ¡Gracias por confiar en nosotras! Esperemos que no haya tenido que bajarle el precio.
+        </p>
+        <hr />
+        <div className="d-flex justify-content-end">
+          <Button onClick={handleAlertClose} variant="outline-success">
+            Cerrar
+          </Button>
+        </div>
+      </Alert>
         </form>
         </>
         );
