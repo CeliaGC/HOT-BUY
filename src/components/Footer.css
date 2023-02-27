@@ -1,0 +1,21 @@
+#social {
+    background-color: #D7C9F0;
+    text-align: center;
+}
+
+#social h2{
+    font-size: large;
+    padding-top: 1rem;
+}
+
+#social img {
+    width: 2rem;
+    padding-bottom: 0.5rem;
+    margin-left: 0.2rem;
+    margin-right: 0.2rem;
+}
+
+#social p{
+    padding-bottom: 0.5rem;
+}
+
