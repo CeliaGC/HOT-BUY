@@ -2,7 +2,10 @@
 import { useState, useEffect } from "react";
 import productHandler from '../handler/productHandler';
 import './ProductShort.css';
-import 
+import { Link } from "react-router-dom";
+// import Products from "../pages/Products";
+
+
 
 export default function productShort() {
     const [products, setProducts] = useState([])
@@ -24,6 +27,8 @@ export default function productShort() {
     function editProduct() {
         console.log("Form opens")
     }
+
+    
     // function DeleteProduct() {
     //     const [showDiv, setShowdiv] = useState(true);
 
@@ -35,7 +40,7 @@ export default function productShort() {
 
 
     return (
-        <container>
+        <>
             {
                 products.map(item =>(
 
@@ -43,8 +48,11 @@ export default function productShort() {
                     
                     <div className="margin"></div>
                     <div id="product">
-                        <div id="img">
-                            <img id="imgProduct" src={item.img}></img>
+                    <div id="img">
+                            <Link to={`detailedView/${item.id}`} >
+    
+                            <img id="imgProduct" src={item.img}/>
+                            </Link>
                             <div id="itemStock"><p>{item.unit}</p></div> 
                         </div>
 
@@ -72,7 +80,7 @@ export default function productShort() {
                 ))
 
             }
-        </container>
+        </>
     )
 }
 

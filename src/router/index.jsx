@@ -3,8 +3,13 @@ import NotFound from "../pages/NotFound";
 import LayoutPublic from "../layout/LayoutPublic";
 import Products from "../pages/Products";
 import  NewProduct from "../pages/Newproduct";
-import DetailedView from "../pages/DetailedView";
+// import DetailedView from "../pages/DetailedView";
 import EditProduct from "../pages/EditProduct";
+
+import productHandler from "../handler/productHandler";
+import ProductShort from "../components/ProductShort";
+import productService from "../services/ProductServices";
+import DetailedView from "../pages/DetailedView";
 
 export const router = createBrowserRouter([
     {
@@ -17,22 +22,23 @@ export const router = createBrowserRouter([
                 children: [
                     {
                         index: true,
-                        element: <Products />,
+                        path: 'products',
+                        element: <ProductShort />,
                         loader: fetchProducts,
                     },
                     {
-                        path: '/newProduct',
+                        path: 'newProduct',
                         element: <NewProduct />,
                     },
                     {
-                        path: '/detailedView/:id',
-                        element: <DetailedView/>,
+                        path: "detailedView/:id",
+                        element: <DetailedView />,
                         loader: fetchProduct,
                     },    
                     {
-                        path: '/editProduct/:id',
+                        path: 'editProduct/:id',
                         element: <EditProduct />,
-                        loader: fetchProduct
+                        loader: fetchProduct,
                         
                     },    
                    
