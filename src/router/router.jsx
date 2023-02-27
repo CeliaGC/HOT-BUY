@@ -2,19 +2,16 @@ import { createBrowserRouter } from "react-router-dom";
 import NotFound from "../pages/NotFound";
 import LayoutPublic from "../layout/LayoutPublic";
 import Products from "../pages/Products";
-import  NewProduct from "../pages/Newproduct";
+import NewProduct from "../pages/Newproduct";
 import DetailedView from "../pages/DetailedView";
 import EditProduct from "../pages/EditProduct";
+import ProductHandler from '../handler/ProductHandler';
 
 export const router = createBrowserRouter([
     {
         path: '/',
         element: <LayoutPublic />,
-        errorElement: <NotFound />, 
         children: [
-            {
-                errorElement: <NotFound />,
-                children: [
                     {
                         index: true,
                         element: <Products />,
@@ -33,22 +30,18 @@ export const router = createBrowserRouter([
                         path: '/editProduct/:id',
                         element: <EditProduct />,
                         loader: fetchProduct
-                        
                     },    
-                   
                 ]
             },
-         
         ]
-    },   
-]);
+);
 
 async function fetchProducts() {
-    const products = await productHandler.loadProducts();
+    const products = await ProductHandler.loadProducts();
     return { products };
 }
 
 async function fetchProduct({ params }) {
-    const product = await productHandler.loadProduct(params.id);
+    const product = await ProductHandler.loadProduct(params.id);
     return { product };
 }

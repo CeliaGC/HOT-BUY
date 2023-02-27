@@ -31,26 +31,24 @@ const ProductHandler = {
     deleteProduct(id){
         return ProductService.deleteProduct(id);
     },
-    updateProduct(newProduct){
-        if (!newProduct) {
+    updateProduct(id, updatedProduct){
+        if (!updatedProduct) {
             return;
         }
 
-        let newProductModel = {
-            "name": newProduct.productName,
-            "price": newProduct.price,
-            "img": newProduct.productPicture,
-            "category": newProduct.category,
-            "productStatus": newProduct.productState,
-            "unit": newProduct.unit,
-            "description": newProduct.description,
+        let updateProduct = {
+            "name": updateProduct.productName,
+            "price": updateProduct.price,
+            "img": updateProduct.productPicture,
+            "category": updateProduct.category,
+            "productStatus": updateProduct.productState,
+            "unit": updateProduct.unit,
+            "description": updateProduct.description,
             "date": new Date(),
-            "id": newProduct.id
+            "id": updateProduct.id
         }
 
-        let id = newProductModel.id;
-
-        return ProductService.updateProduct(id, newProductModel);
+        return ProductService.updateProduct(id, updateProduct);
     }
 }
 
