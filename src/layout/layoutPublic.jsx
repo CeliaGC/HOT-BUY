@@ -1,5 +1,5 @@
 import { Outlet, useNavigation } from "react-router-dom";
-import Navbar from "../components/Navbar";
+import NavbarHotBuy from "../components/Navbar";
 import Footer from "../components/Footer";
 
 const LayoutPublic = () => {
@@ -8,7 +8,7 @@ const LayoutPublic = () => {
 
     return (
         <>
-            <Navbar />
+            <NavbarHotBuy />
             <main className="container">
             {navigation.state === "loading" && (
                 <div className="alert alert-info my-S">Loading...</div>

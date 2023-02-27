@@ -1,7 +1,9 @@
 import { useForm } from 'react-hook-form';
 import './Form.css'
 import React, { useState } from 'react';
+import Alert from 'react-bootstrap/Alert';
 import ProductHandler from '../handler/ProductHandler';
+import Button from 'react-bootstrap/Button';
 import '../../src/index.css'
 
 function MyForm() {
@@ -16,11 +18,21 @@ function MyForm() {
     };
   }
 
+  const [showAlert, setShowAlert] = useState(false);
+
+  const handleAgregarClick = () => {
+    setShowAlert(true);
+  }
+
+  const handleAlertClose = () => {
+    setShowAlert(false);
+  }
+
   const onSubmit = (data) => {
     ProductHandler.addProduct(data)
     console.log(data)
-    return window.alert("Producto agregado a su cuenta");
-  }
+    // return window.alert("Producto agregado a su cuenta");
+}
 
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
@@ -37,6 +49,7 @@ function MyForm() {
         <option value="mobiliario">Mobiliario</option>
         <option value="menaje">Menaje</option>
         <option value="deporte">Deporte</option>
+        <option value="deporte">Tecnología</option>
         </select>
 
         <input id="price" placeholder='Precio' {...register("price", { required: true })} />
@@ -70,11 +83,24 @@ function MyForm() {
         </fieldset>
       </fieldset>
       <div id="buttons">
-      <input id="submit" type="submit" value="GUARDAR" />
+      <input onClick={handleAgregarClick} id="submit" type="submit" value="GUARDAR" />
       <input id="reset" type="reset" value="LIMPIAR" />
       </div>
+
+      <Alert show={showAlert} variant="success" onClose={handleAlertClose} dismissible>
+        <Alert.Heading>Producto agregado a su cuenta</Alert.Heading>
+        <p>
+          ¡Gracias por confiar en nosotras! Esperemos se venda pronto y no tenga que bajarle el precio.
+        </p>
+        <hr />
+        <div className="d-flex justify-content-end">
+          <Button onClick={handleAlertClose} variant="outline-success">
+            Cerrar
+          </Button>
+        </div>
+      </Alert>
     </form>
-  );
+  )
 
 }
 

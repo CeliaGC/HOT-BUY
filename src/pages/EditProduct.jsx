@@ -4,7 +4,7 @@ import '../components/Form.css'
 const EditProduct = () => { 
     return (
     <>
-    <EditForm />;
+    <EditForm />
     </>
     )
 };
