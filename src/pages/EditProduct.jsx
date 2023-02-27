@@ -1,4 +1,12 @@
+import EditForm from '../components/EditForm'
+import '../components/Form.css'
+
 const EditProduct = () => { 
-    return "EditProduct";
- };
- export default EditProduct;
+    return (
+    <>
+    <EditForm />;
+    </>
+    )
+};
+
+export default EditProduct;

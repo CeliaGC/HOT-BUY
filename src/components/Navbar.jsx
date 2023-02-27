@@ -6,7 +6,7 @@ import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 
 
-function navbarHotBuy() {
+function NavbarHotBuy() {
   return (
     <>
     <Navbar bg="light" >
@@ -31,4 +31,4 @@ function navbarHotBuy() {
   );
 }
 
-export default navbarHotBuy;
+export default NavbarHotBuy;
