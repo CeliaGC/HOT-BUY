@@ -1,6 +1,6 @@
-import ProductService from "../services/ProductServices";
+import { ProductService } from "../services/ProductServices";
 
-const ProductHandler = {
+export const ProductHandler = {
     addProduct(newProduct){
         // console.log(newProduct);
         if (!newProduct) {
@@ -19,8 +19,8 @@ const ProductHandler = {
             "id": ""
 
         }
-        ProductService.submitProduct(product);
-        return product;
+        return ProductService.submitProduct(product);
+        //return product;
     },
     loadProducts(){
         return ProductService.getProducts();

@@ -9,7 +9,7 @@ const apiClient = axios.create({
     }
 })
 
-const ProductService = {
+ export const ProductService = {
     async getProducts() {
         let response = await apiClient.get("/products");
         let allProducts = response.data;
@@ -31,4 +31,4 @@ const ProductService = {
     }
 }
 
-export default ProductService
+//export default ProductService
