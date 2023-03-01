@@ -35,7 +35,7 @@ function MyForm() {
 }
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)}>
+    <form onSubmit={handleSubmit(onSubmit)} className="form">
       <fieldset>
         <input id="productName" placeholder='Nombre del producto' {...register("productName", { required: true })} />
         {errors.productName && <span>Debe rellenar este campo</span>}
@@ -55,7 +55,7 @@ function MyForm() {
         <input id="price" placeholder='Precio' {...register("price", { required: true })} />
         {errors.price && <span>Debe rellenar este campo</span>}
 
-        <input id="units" placeholder='Unidades' {...register("units", { required: true })} />
+        <input id="units" placeholder='Unidades' type={'number'} {...register("units", { required: true })} />
         {errors.units && <span>Debe rellenar este campo</span>}
 
         <input id="description" placeholder='Descripción' {...register("description", { required: true })} />
