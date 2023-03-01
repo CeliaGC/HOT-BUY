@@ -3,4 +3,34 @@ a i.fa-whatsapp {
     font-size: 2rem;
     margin-right: 0.5rem;
   }
+
+  @font-face {
+    font-family: 'Goldman';
+    src: url('./assets/font/Goldman.ttf') format('truetype');
+    font-style: normal;
+    font-weight: normal;
+  }
   
+  @font-face {
+    font-family: 'Graduate';
+    src: url('./assets/font/Graduate.ttf') format('truetype');
+    font-style: normal;
+    font-weight: normal;
+  }
+  
+  @font-face {
+    font-family: 'Kosugi';
+    src: url('./assets/font/Kosugi.ttf') format('truetype');
+    font-style: normal;
+    font-weight: normal;
+  }
+
+#card{
+  text-align: center;
+  margin: auto;
+}
+
+#buttonBack{
+  margin: auto;
+  width: 80%;
+}

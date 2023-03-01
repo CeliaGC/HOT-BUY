@@ -1,15 +1,40 @@
 import React, { useState } from 'react';
+import ProductHandler from '../handler/ProductHandler';
+import { useLoaderData } from "react-router-dom";
 
-function StockCounter({initialCount}) {
-    const [count, setCount] = useState(0);
-    return (
-      <>
-        Unidades: {count}
-        <button onClick={() => setCount(0)}>Sin stock</button>
-        <button onClick={() => setCount(prevCount => prevCount - 1)}>-</button>
-        <button onClick={() => setCount(prevCount => prevCount + 1)}>+</button>
-      </>
-    );
-  }
+function StockCounter() {
+  const { product } = useLoaderData();
+  const id = product.id;
+  const [unit, setUnit] = useState(product.unit);
 
-  export default StockCounter
+  const handleUnitChange = (event) => {
+    let unitInput = event.target.value;
+    setUnit(unitInput);
+  };
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    let updatedProduct = {
+      ...product,
+      unit: unit
+    };
+    ProductHandler.updateProduct(id, updatedProduct)
+      .then(() => {
+        setUnit(updatedProduct.unit);
+      });
+  };
+
+  return (
+    <>
+      <div>
+        <p>Unidades: {unit}</p>
+        <button onClick={() => setUnit(0)}>Sin stock</button>
+        <button onClick={() => setUnit(prevCount => prevCount - 1)}>-</button>
+        <button onClick={() => setUnit(prevCount => prevCount + 1)}>+</button>
+      </div>
+      <form onSubmit={handleSubmit}></form>
+    </>
+  );
+}
+
+export default StockCounter;

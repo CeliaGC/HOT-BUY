@@ -48,6 +48,7 @@ const FormEditProduct = () => {
             let unitInput = event.target.value;
             setUnit(unitInput);
         };
+        
         const handleDescriptionChange = (event) => {
             let descriptionInput = event.target.value;
             setDescription(descriptionInput);
@@ -116,7 +117,7 @@ const FormEditProduct = () => {
             </fieldset>
             <div id="buttons">
             <input onClick={handleAgregarClick} id="submit" type="submit" value="ACTUALIZAR" />
-            <Link to="/Products" className="nav--item"><input id="back" type="button" value="VOLVER" /></Link>
+            <Link to="/" className="nav--item"><input id="back" type="button" value="VOLVER" /></Link>
             </div>
 
             <Alert show={showAlert} variant="success" onClose={handleAlertClose} dismissible>

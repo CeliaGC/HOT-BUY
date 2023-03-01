@@ -1,6 +1,6 @@
 import { forEach } from "lodash";
 import { useState, useEffect } from "react";
-import productHandler from '../handler/productHandler';
+import ProductHandler from '../handler/ProductHandler';
 import { Link } from 'react-router-dom';
 import './ProductShort.css'
 
@@ -12,7 +12,7 @@ export default function productShort() {
     },[]);
 
     const getData = async () => {
-        const data = await productHandler.loadProducts();
+        const data = await ProductHandler.loadProducts();
         setProducts(data)
     }
 
@@ -20,19 +20,6 @@ export default function productShort() {
         
         setProducts(products.filter((p) => p.id !== id));
     }
-
-    function editProduct() {
-        console.log("Form opens")
-    }
-    // function DeleteProduct() {
-    //     const [showDiv, setShowdiv] = useState(true);
-
-    //     const clickErase = () => {
-    //         setShowdiv(false);
-    //     }
-    // }
-
-
 
     return (
         <container>
