@@ -13,16 +13,7 @@ const LayoutPublic = () => {
         <>
             <Navbar />
             <ProductShort />
-            {/* <main className="container">
-            <NavbarHotBuy />
-            <main className="container">
-            {navigation.state === "loading" && (
-                <div className="alert alert-info my-S">Loading...</div>
-            )}  
-                <Outlet />
-            </main> */}
-            <footer className="container text-center">Footer</footer>
-            </main>
+           
             <Footer />
         </>
     );
