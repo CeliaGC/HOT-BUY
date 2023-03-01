@@ -1,5 +1,4 @@
 import { createBrowserRouter } from "react-router-dom";
-import NotFound from "../pages/NotFound";
 import LayoutPublic from "../layout/LayoutPublic";
 import Products from "../pages/Products";
 import NewProduct from "../pages/Newproduct";
