@@ -31,6 +31,10 @@ input, select {
     padding-left: 0.8rem;
 }
 
+label{
+  margin-top: 0.8rem;
+}
+
 select {
   color:rgba(108, 99, 99, 0.807)
 }
@@ -69,6 +73,21 @@ input[type="reset"] {
     color: white;
     font-family: 'Graduate';
 }
+
+input[type="button"] {
+  display: block;
+  width: 6vw;
+  margin: 1em auto;
+  height: 2em;
+  font-size: 1.1rem;
+  background-color: #7C2E9B;
+  border-color: #D7C9F0;
+  min-width: 300px;
+  border-radius: 5px;
+  margin-left: 2vw;
+  color: white;
+  font-family: 'Graduate';
+}
    
 input[type="file"] {
     padding: 1px 2px;
@@ -91,7 +110,7 @@ input[type="file"] {
 }
 
 input[type="checkbox"]{
-  width: 1.8vw;
+  width: 1rem;
 }
 
 h2, p{
@@ -106,4 +125,20 @@ h2{
 
 p{
   text-transform: capitalize;
+}
+
+@media (min-width: 320px) and (max-width: 760px){
+  #buttons{
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+  }
+
+  input[type="submit"] {
+    margin-bottom: 0%;
+  }
+
+  input[type="checkbox"]{
+    width: 1rem;
+  }
 }

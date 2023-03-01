@@ -1,0 +1,40 @@
+#header {
+    margin-top: 11rem;
+    width: 100vw;
+    font-family: 'Goldman';
+}
+
+.navbar{
+    border-color: #E79036 solid 5px;
+}
+
+.search {
+    margin-top: 2.5rem;
+    width: 15rem;
+    height: 2rem;
+}
+
+.bttn {
+    width: 4rem;
+    height: 2rem;
+    margin-top: 2.5rem;
+    text-transform: uppercase;
+    padding: 0%;
+}
+
+@media (min-width: 320px) and (max-width: 760px){
+    #header{
+        margin-top: -4rem;      
+    }
+    .search {
+        margin-top: 3rem;
+        width: 7rem;
+        height: 2rem;
+        font-size: x-small;
+    }
+    .bttn {
+        width: 4rem;
+        height: 2rem;
+        margin-top: 3rem;
+    }
+}

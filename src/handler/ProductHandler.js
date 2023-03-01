@@ -36,19 +36,19 @@ const ProductHandler = {
             return;
         }
 
-        let updateProduct = {
-            "name": updateProduct.productName,
-            "price": updateProduct.price,
-            "img": updateProduct.productPicture,
-            "category": updateProduct.category,
-            "productStatus": updateProduct.productState,
-            "unit": updateProduct.unit,
-            "description": updateProduct.description,
+        let updatedProductStructure = {
+            "name": updatedProduct.name,
+            "price": updatedProduct.price,
+            "img": updatedProduct.img,
+            "category": updatedProduct.category,
+            "productStatus": updatedProduct.productStatus,
+            "unit": updatedProduct.unit,
+            "description": updatedProduct.description,
             "date": new Date(),
-            "id": updateProduct.id
+            "id": updatedProduct.id
         }
 
-        return ProductService.updateProduct(id, updateProduct);
+        return ProductService.updateProduct(id, updatedProductStructure);
     }
 }
 
