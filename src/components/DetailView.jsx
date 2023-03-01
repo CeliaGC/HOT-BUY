@@ -1,8 +1,9 @@
 import React from "react";
+import './DetailView.css'
 
 
 
-function DetailView ({name, price, }) {
+export default function DetailView ({name, price, }) {
     return (
         <>
         <h1>{name}</h1>
@@ -10,5 +11,3 @@ function DetailView ({name, price, }) {
         </>
     )
 }
-
-export default DetailView

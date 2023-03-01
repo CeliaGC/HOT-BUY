@@ -49,7 +49,15 @@ const ProductHandler = {
         }
 
         return ProductService.updateProduct(id, updatedProductStructure);
-    }
+    },
+    async fetchProducts() {
+        const products = await ProductHandler.loadProducts();
+        return { products };
+    },
+    async fetchProduct({ params }) {
+        const product = await ProductHandler.loadProduct(params.id);
+        return { product };
+    },
 }
 
 export default ProductHandler

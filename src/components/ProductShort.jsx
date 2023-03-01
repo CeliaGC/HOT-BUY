@@ -1,7 +1,8 @@
+import { forEach } from "lodash";
 import { useState, useEffect } from "react";
-import ProductHandler from "../handler/productHandler";
+import productHandler from '../handler/productHandler';
+import { Link } from 'react-router-dom';
 import './ProductShort.css'
-import {Link} from 'react-router-dom';
 
 export default function productShort() {
     const [products, setProducts] = useState([])
@@ -11,39 +12,39 @@ export default function productShort() {
     },[]);
 
     const getData = async () => {
-        const data = await ProductHandler.loadProducts();
+        const data = await productHandler.loadProducts();
         setProducts(data)
     }
 
-    const deleteShort = async (id) => {
+    const deleteShort = (id) => {
         
         setProducts(products.filter((p) => p.id !== id));
-        await ProductHandler.deleteProduct(id)
-        
     }
 
-    // const getDetail =  (id) => {
-        
-    //     products.find(p => p.id == id);
-    //     console.log(id)   
-    //     console.log(products)
-        
+    function editProduct() {
+        console.log("Form opens")
+    }
+    // function DeleteProduct() {
+    //     const [showDiv, setShowdiv] = useState(true);
 
+    //     const clickErase = () => {
+    //         setShowdiv(false);
+    //     }
     // }
+
+
+
     return (
-        <>
+        <container>
             {
                 products.map(item =>(
 
                 (<div id="productShort" key={item.id}>
                     
                     <div className="margin"></div>
-
-
                     <div id="product">
                         <div id="img">
-                            <Link to="/DetailedView"><img id="imgProduct" src={item.img}></img></Link>
-                        
+                        <Link className="product-link" to={`/DetailedView/${item.id}`}><img id="imgProduct" src={item.img}></img></Link>
                             <div id="itemStock"><p>{item.unit}</p></div> 
                         </div>
 
@@ -58,10 +59,9 @@ export default function productShort() {
                             <div className="grid" id="g7"></div>
                             <div className="grid" id="itemPrice"><p>{item.price + ' €'}</p></div>
                             <div className="grid" id="g9"></div>
-                            <button className="button" id="edit"></button>
+                            <Link className="product-link" to={`/EditProduct/${item.id}`}><button className="button" id="edit"></button></Link>
                             <div className="grid" id="g11"></div>
                             <button onClick={() => deleteShort(item.id)}className="button" id="delete"></button>
-                            {/* <input onSubmit={onSubmit(item.id)} type="submit" className="button" id="delete"/> */}
                             <div className="grid" id="g13"></div>
                         </div>
                     </div>
@@ -72,7 +72,6 @@ export default function productShort() {
                 ))
 
             }
-        </>
+        </container>
     )
 }
-
