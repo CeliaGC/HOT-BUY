@@ -1,115 +1,107 @@
 import { useForm } from 'react-hook-form';
 import './Form.css'
 import React, { useState } from 'react';
+import Alert from 'react-bootstrap/Alert';
 import ProductHandler from '../handler/ProductHandler';
+import Button from 'react-bootstrap/Button';
+import '../../src/index.css'
 
 function MyForm() {
-    const { register, handleSubmit, formState: { errors }, setValue, getValues  } = useForm();
+  const { register, handleSubmit, formState: { errors }, setValue, getValues } = useForm();
 
-    // const handleImage = (data) => {
-    //   // console.log(data)
-    //   // console.log(register.productPicture[0]);
-    //   const picture = data.productPicture[0];
-    //   const reader = new FileReader();
-    //   // console.log(reader)
-    //   let parsedData = {}
-    //     reader.readAsDataURL(picture);
-    //     reader.onload = function (event) {
-    //         parsedData = {
-    //           ...data,
-    //           productPicture: reader.result
-    //         }
-    //         console.log(parsedData)
-    //         console.log(event.target.result)
-    //         return event.target.result
-    //       }
-        
-    //     console.log()
-      
-    //   // return Image;
-      
-    // }
+  const handleImageChange = (event) => {
+    const picture = event.target.files[0];
+    const reader = new FileReader();
+    reader.readAsDataURL(picture);
+    reader.onload = () => {
+      setValue("productPicture", reader.result);
+    };
+  }
 
-    // const handleSubmit = async (event) => {
-    //     event.preventDefault();
-    //     ProductHandler.addProduct(value);
-    // };
+  const [showAlert, setShowAlert] = useState(false);
 
-    const handleImageChange = (event) => {
-      const picture = event.target.files[0];
-      const reader = new FileReader();
-      reader.readAsDataURL(picture);
-      reader.onload = () => {
-        setValue("productPicture", reader.result);
-      };
-    }
-  
-    const onSubmit = (data) => {
-      ProductHandler.addProduct(data)
-    }
-  
-    // const onSubmit = (data) => {
-    // console.log(data);  
-    // let parsedData = handleImage(data)
-    // console.log(parsedData)
-    // return ProductHandler.addProduct(parsedData)
-    
-    // }
+  const handleAgregarClick = () => {
+    setShowAlert(true);
+  }
+
+  const handleAlertClose = () => {
+    setShowAlert(false);
+  }
+
+  const onSubmit = (data) => {
+    ProductHandler.addProduct(data)
+    console.log(data)
+    // return window.alert("Producto agregado a su cuenta");
+}
 
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
       <fieldset>
-        <input  id="name" placeholder='Nombre del producto' {...register("productName", { required: true })} />
+        <input id="productName" placeholder='Nombre del producto' {...register("productName", { required: true })} />
         {errors.productName && <span>Debe rellenar este campo</span>}
 
-        <input id="category" placeholder='Categoría'{...register("category", { required: true })} />
+        <select id="category" name="category" {...register("category", { required: true })}>
         {errors.category && <span>Debe rellenar este campo</span>}
-        {/* Le podemos poner un dropdown:
-       Category:
-        <select id="Category" name="dropdown">
-          <option value="">(select an option)</option>
-          <option value="1">Electronics</option>
-          <option value="2">Textile</option>
-          <option value="3">Home</option>
-          <option value="4">Entertainment</option>
-          <option value="5">Pets</option>
-        </select>*/}
+        <option value="selecciona">Tipo de producto...</option>
+        <option value="bebé">Bebé</option>
+        <option value="moda">Moda</option>
+        <option value="complementos">Complementos</option>
+        <option value="mobiliario">Mobiliario</option>
+        <option value="menaje">Menaje</option>
+        <option value="deporte">Deporte</option>
+        <option value="deporte">Tecnología</option>
+        </select>
 
         <input id="price" placeholder='Precio' {...register("price", { required: true })} />
         {errors.price && <span>Debe rellenar este campo</span>}
 
-        <input id="unit" placeholder='Unidades' {...register("units", { required: true })} />
+        <input id="units" placeholder='Unidades' {...register("units", { required: true })} />
         {errors.units && <span>Debe rellenar este campo</span>}
 
         <input id="description" placeholder='Descripción' {...register("description", { required: true })} />
         {errors.description && <span>Debe rellenar este campo</span>}
 
-        {/* Le podemos poner un textarea: 
-      <textarea id="Description" rows="6" cols="8" placeholder="Description. Maximum 250 characters."
-      minlength="0" maxlength="250" pattern="[A-Za-z0-9]" required></textarea> */}
-
-        <input id="productStatus" placeholder='Estado del producto'{...register("productState", { required: true })} />
-        {errors.productState && <span>Debe rellenar este campo</span>}
-
-        {/* Le podemos poner un radio */}
+        <select id="productState" name="productState" {...register("productState", { required: true })}>
+        {errors.category && <span>Debe rellenar este campo</span>}
+        <option value="selecciona">Estado del producto...</option>
+        <option value="nuevo">Nuevo</option>
+        <option value="semminuevo">Seminuevo</option>
+        <option value="desperfectos">Con desperfectos</option>
+        </select>
 
         <fieldset>
 
-          <input id="img" placeholder='Foto del producto' type="file" {...register("productPicture", { required: true })} />
+          <input id="productPicture" placeholder='Foto del producto' type="file" onChange={handleImageChange} />
           {errors.productPicture && <span>Debe rellenar este campo</span>}
 
-          <input id="Terms" placeholder='terms' type="checkbox" value="checkbox" className="inline" {...register("terms", { required: true })} />Acepto los términos y condiciones
+          <div id="term">
+          
+          <input id="Terms" placeholder='terms' type="checkbox" value="checkbox" className="inline" {...register("terms", { required: true })} />
           {errors.terms && <span>Debe rellenar este campo</span>}
-        
+          <label>Acepto los términos y condiciones</label></div>
+
         </fieldset>
       </fieldset>
+      <div id="buttons">
+      <input onClick={handleAgregarClick} id="submit" type="submit" value="GUARDAR" />
+      <input id="reset" type="reset" value="LIMPIAR" />
+      </div>
 
-      <input id="submit" type="submit" value="ENVIAR" />
-      <input id="reset" type="reset" value="RESTABLECER" />
-
+      <Alert show={showAlert} variant="success" onClose={handleAlertClose} dismissible>
+        <Alert.Heading>Producto agregado a su cuenta</Alert.Heading>
+        <p>
+          ¡Gracias por confiar en nosotras! Esperemos se venda pronto y no tenga que bajarle el precio.
+        </p>
+        <hr />
+        <div className="d-flex justify-content-end">
+          <Button onClick={handleAlertClose} variant="outline-success">
+            Cerrar
+          </Button>
+        </div>
+      </Alert>
     </form>
-  );
-  
+  )
+
 }
 
 export default MyForm

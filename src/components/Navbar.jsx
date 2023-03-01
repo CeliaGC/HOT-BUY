@@ -4,15 +4,18 @@ import Container from 'react-bootstrap/Container';
 import Form from 'react-bootstrap/Form';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
+import { Link } from "react-router-dom"
+import './Navbar.css'
 
 
-function navbarHotBuy() {
+function NavbarHotBuy() {
   return (
     <>
-    <Navbar bg="light" >
+    <header id="header">
+    <Navbar className="navbar" style={{backgroundColor:"#D7C9F0"}} >
       <Container>
-        <Navbar.Brand href="#NavbarHotBuy"> <img alt="" src="../../src/assets/img/logo.png" width="30" height="30" className="d-inline-block align-top"/>{' '}
-            HOT BUY</Navbar.Brand>
+      <Navbar.Brand href="#NavbarHotBuy"><Link to="/"><img alt="" src="../../src/assets/img/logo.png" width="100" height="120" className="d-inline-block align-top"/></Link>
+        </Navbar.Brand>
           <Nav className="me-auto">
             <NavLink href="#uploadProduct">Subir producto</NavLink>
           </Nav>
@@ -20,15 +23,16 @@ function navbarHotBuy() {
             <Form.Control
               type="search"
               placeholder="Buscar producto"
-              className="me-2"
+              className="me-2 search"
               aria-label="Search"
             />
-            <Button variant="outline-success">Buscar</Button>
+            <Button className="bttn" variant="outline-success">Buscar</Button>
           </Form>
       </Container>
     </Navbar>
+    </header>
     </>
   );
 }
 
-export default navbarHotBuy;
+export default NavbarHotBuy;

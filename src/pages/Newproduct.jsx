@@ -1,4 +1,10 @@
+import Form from '../components/Form'
+
 const NewProducts = () => { 
-    return "NewProducts";
+    return (
+    <>
+    <Form />
+    </>
+    )
  };
  export default NewProducts;

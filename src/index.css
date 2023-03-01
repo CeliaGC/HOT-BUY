@@ -67,3 +67,25 @@ button:focus-visible {
     background-color: #f9f9f9;
   }
 }
+
+@font-face {
+  font-family: 'Goldman';
+  src: url('./assets/font/Goldman.ttf') format('truetype');
+  font-style: normal;
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: 'Graduate';
+  src: url('./assets/font/Graduate.ttf') format('truetype');
+  font-style: normal;
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: 'Kosugi';
+  src: url('./assets/font/Kosugi.ttf') format('truetype');
+  font-style: normal;
+  font-weight: normal;
+}
+

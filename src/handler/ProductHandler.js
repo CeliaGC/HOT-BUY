@@ -13,9 +13,9 @@ const ProductHandler = {
             "img": newProduct.productPicture,
             "category": newProduct.category,
             "productStatus": newProduct.productState,
-            "unit": newProduct.units,
+            "unit": newProduct.unit,
             "description": newProduct.description,
-            "date": newProduct.date,
+            "date": new Date(),
             "id": ""
 
         }
@@ -31,26 +31,24 @@ const ProductHandler = {
     deleteProduct(id){
         return ProductService.deleteProduct(id);
     },
-    updateProduct(newProduct){
-        if (!newProduct) {
+    updateProduct(id, updatedProduct){
+        if (!updatedProduct) {
             return;
         }
 
-        let newProductModel = {
-            "name": newProduct.productName,
-            "price": newProduct.price,
-            "img": newProduct.productPicture,
-            "category": newProduct.category,
-            "productStatus": newProduct.productState,
-            "unit": newProduct.units,
-            "description": newProduct.description,
-            "date": newProduct.date,
-            "id": newProduct.id
+        let updatedProductStructure = {
+            "name": updatedProduct.name,
+            "price": updatedProduct.price,
+            "img": updatedProduct.img,
+            "category": updatedProduct.category,
+            "productStatus": updatedProduct.productStatus,
+            "unit": updatedProduct.unit,
+            "description": updatedProduct.description,
+            "date": new Date(),
+            "id": updatedProduct.id
         }
 
-        let id = newProductModel.id;
-
-        return ProductService.updateProduct(id, newProductModel);
+        return ProductService.updateProduct(id, updatedProductStructure);
     }
 }
 
