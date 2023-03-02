@@ -1,0 +1,24 @@
+/* * {
+    margin: -50px;
+    padding: -100px;
+    box-sizing: border-box;
+} */
+
+.navbar {
+    width: 100%;
+    background-image: linear-gradient(to right, #F0C9A8, #F0C9A8);
+    border: solid 8px #E79036;
+}
+
+.nav-link {
+    color: white !important;
+    /*text-align: center; */
+}
+
+.nav-link:hover {
+    color: black !important;
+}
+
+.logo {
+    
+}

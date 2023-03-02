@@ -4,13 +4,15 @@ import Form from 'react-bootstrap/Form';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 
+import './Navbar.css'
+
 function NavbarHotBuy() {
   return (
     <>
     <Navbar bg="light" >
       <Container>
-        <Navbar.Brand href="#NavbarHotBuy"> <img alt="" src="../../src/assets/img/logo.png" width="30" height="30" className="d-inline-block align-top"/>{' '}
-            HOT BUY</Navbar.Brand>
+        <Navbar.Brand href="#NavbarHotBuy"> <img alt="" src="../../src/assets/img/logo.png" width="80" height="80" className="d-inline-block align-top"/>{' '}
+        </Navbar.Brand>
           <Nav className="me-auto">
             <Nav.Link href="#uploadProduct">Subir producto</Nav.Link>
           </Nav>
