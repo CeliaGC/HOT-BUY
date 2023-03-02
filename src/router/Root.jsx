@@ -8,6 +8,7 @@ function Root() {
             <NavbarHotBuy />
             <Outlet />
             <Footer />
+
         </>
     )
 }
