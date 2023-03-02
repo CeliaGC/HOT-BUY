@@ -13,7 +13,7 @@ const ProductHandler = {
             "img": newProduct.productPicture,
             "category": newProduct.category,
             "productStatus": newProduct.productState,
-            "unit": newProduct.unit,
+            "unit": newProduct.units,
             "description": newProduct.description,
             "date": new Date(),
             "id": ""

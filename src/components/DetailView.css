@@ -28,9 +28,33 @@ a i.fa-whatsapp {
 #card{
   text-align: center;
   margin: auto;
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-#buttonBack{
-  margin: auto;
+#imgProduct {
+  margin-right: 3rem;
+  border-radius: 10px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+}
+
+#back{
   width: 80%;
+}
+
+h2{
+  font-size: xx-large;
+  color: white;
+  text-align: center;
+}
+
+h4{
+  font-size: larger;
+  font-family: 'Goldman'
+}
+
+p{
+  font-size: large;
 }

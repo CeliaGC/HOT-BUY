@@ -7,6 +7,8 @@ import { Link } from "react-router-dom"
 import './Form.css'
 import '../../src/index.css'
 
+
+
 const FormEditProduct = () => { 
         const { product } = useLoaderData();
         const id = product.id;
@@ -48,7 +50,7 @@ const FormEditProduct = () => {
             let unitInput = event.target.value;
             setUnit(unitInput);
         };
-        
+
         const handleDescriptionChange = (event) => {
             let descriptionInput = event.target.value;
             setDescription(descriptionInput);
