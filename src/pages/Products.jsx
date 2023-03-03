@@ -1,10 +1,14 @@
 import ProductShort from "../components/ProductShort";
+import Up_here from "../components/Up_here"
+
 
 
 function Products() { 
+   
     return (
        <>
-        <ProductShort />
+      <Up_here />
+      <ProductShort />
        </> 
     );
  };
