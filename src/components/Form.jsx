@@ -66,7 +66,7 @@ function MyForm() {
         <option value="selecciona">Estado del producto...</option>
         <option value="nuevo">Nuevo</option>
         <option value="semminuevo">Seminuevo</option>
-        <option value="desperfectos">Con desperfectos</option>
+        <option value="usado">Usado</option>
         </select>
 
         <fieldset>
