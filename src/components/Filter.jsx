@@ -1,10 +1,10 @@
 import * as React from 'react';
 import TextField from '@mui/material/TextField';
 import Autocomplete, { createFilterOptions } from '@mui/material/Autocomplete';
-
+import {useLoaderData } from "react-router-dom";
 const filterOptions = createFilterOptions({
   matchFrom: 'start',
-  stringify: (option) => option.title,
+  stringify: (option) => option.category,
 });
 
 export default function Filter() {
@@ -12,7 +12,7 @@ export default function Filter() {
     <Autocomplete
       id="filter"
       options={product}
-      getOptionLabel={(option) => option.product}
+      getOptionLabel={(option) => option.category}
       filterOptions={filterOptions}
       sx={{ width: 230, backgroundColor:"#7C2E9B", color: "#E79036" }}
       renderInput={(params) => <TextField {...params} label="BUSCAR PRODUCTO" />}
@@ -22,6 +22,13 @@ export default function Filter() {
 }
 
 const product = [
-  { product: 'Silla de escritorio', category: "Mobiliario oficina" },
-  { product: 'Paraguas Plegable Compacto Harry Potter', category: "Accesorios" }
-]
+  { category: 'Bebe' },
+  { category: 'Moda' },
+  { category: 'Complementos' },
+  { category: 'Mobiliario' },
+  { category: 'Menaje' },
+  { category: 'Deporte' },
+  { category: 'Tecnología' },
+];
+
+
