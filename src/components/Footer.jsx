@@ -9,7 +9,7 @@ export default function Footer(){
             <h2>Síguenos</h2>
                 <a title="facebook" href="" target="_blank"><img src={facebook} alt="facebook"/></a>
                 <a title="instagram" href="" target="_blank"><img src={instagram} lt="instagram"/></a>
-                <a title="linkedin" href="" target="_blank"><img src={twitter} alt="linkedin"/></a>
+                <a title="linkedin" href="" target="_blank"><img src={twitter} alt="twitter"/></a>
             <p>©Copyright <strong>Hot Buy</strong> - Todos los derechos reservados</p>
         </div>
     )
