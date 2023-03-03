@@ -45,7 +45,7 @@ export default function DetailedView() {
         return(
         <div>
         <Card sx={{ maxWidth: '95vw', margin: 'auto' }}>
-      <CardActionArea style={{display: 'flex', flexDirection: 'column'}}>
+      <CardActionArea style={{margin: 'auto', display: 'flex', flexDirection: 'column', justifyContent: 'center'}}>
         <div id='imgProdct'>
         <CardMedia style={{width:'60vw', margin:'auto', padding: '1rem'}}
           component="img"
@@ -99,7 +99,7 @@ export default function DetailedView() {
           <div>
           <CardContent style={{width:'50vw'}}>
             <Typography style={{backgroundColor:'#7C2E9B', borderRadius: '5px', height: '2.4rem'}} gutterBottom variant="h5" component="div">
-            <h2>{name}</h2>
+            <h1>{name}</h1>
             </Typography>
             <Typography gutterBottom variant="h6" component="div">
             <p>{dateUploaded}</p>
@@ -123,9 +123,9 @@ export default function DetailedView() {
           </div>
         </CardActionArea>
         <CardActions>
-          <Button size="small" color="primary">
+          {/* <Button size="small" color="primary">
             Share
-          </Button>
+          </Button> */}
         </CardActions>
       </Card>
       </div>
@@ -136,7 +136,7 @@ export default function DetailedView() {
     <div id='card'>
       {mediaquery()}
       <div id='buttonBack'>
-          <Link to="/Products" className="nav--item"><input id="back" type="button" value="VOLVER" /></Link>
+          <Link to="/" className="nav--item"><input id="back" type="button" value="VOLVER" /></Link>
       </div>
     </div>
     );
