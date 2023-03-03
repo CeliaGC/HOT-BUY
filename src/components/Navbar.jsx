@@ -14,7 +14,7 @@ function NavbarHotBuy() {
     <header id="header">
     <Navbar className="navbar" style={{backgroundColor:"#D7C9F0"}} >
       <Container>
-      <Navbar.Brand href="#NavbarHotBuy"><Link to="/"><img alt="" src="../../src/assets/img/logo.png" width="100" height="120" className="d-inline-block align-top"/></Link>
+      <Navbar.Brand href="#NavbarHotBuy"><Link to="/"><img alt="" src="../../src/assets/img/logo.png" className="d-inline-block align-top"/></Link>
         </Navbar.Brand>
           <Nav className="me-auto">
             <NavLink href="#uploadProduct">Subir producto</NavLink>
