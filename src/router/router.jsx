@@ -6,6 +6,7 @@ import DetailedView from "../pages/DetailedView";
 import EditProduct from "../pages/EditProduct";
 import ProductHandler from '../handler/ProductHandler';
 
+
 export const router = createBrowserRouter([
     {
         path: '/',
