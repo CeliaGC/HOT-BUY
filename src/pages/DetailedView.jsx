@@ -1,4 +1,11 @@
+import DetailView from '../components/DetailView'
+
 const DetailedView = () => { 
-    return "DetailedView";
- };
- export default DetailedView;
+    return (
+    <>
+    <DetailView />
+    </>
+    )
+};
+
+export default DetailedView;

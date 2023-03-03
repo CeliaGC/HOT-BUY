@@ -1,6 +1,7 @@
 import { forEach } from "lodash";
 import { useState, useEffect } from "react";
-import productHandler from '../handler/productHandler';
+import ProductHandler from '../handler/ProductHandler';
+import { Link } from 'react-router-dom';
 import './ProductShort.css'
 
 export default function productShort() {
@@ -11,7 +12,7 @@ export default function productShort() {
     },[]);
 
     const getData = async () => {
-        const data = await productHandler.loadProducts();
+        const data = await ProductHandler.loadProducts();
         setProducts(data)
     }
 
@@ -19,19 +20,6 @@ export default function productShort() {
         
         setProducts(products.filter((p) => p.id !== id));
     }
-
-    function editProduct() {
-        console.log("Form opens")
-    }
-    // function DeleteProduct() {
-    //     const [showDiv, setShowdiv] = useState(true);
-
-    //     const clickErase = () => {
-    //         setShowdiv(false);
-    //     }
-    // }
-
-
 
     return (
         <container>
@@ -43,7 +31,7 @@ export default function productShort() {
                     <div className="margin"></div>
                     <div id="product">
                         <div id="img">
-                            <img id="imgProduct" src={item.img}></img>
+                        <Link className="product-link" to={`/DetailedView/${item.id}`}><img id="imgProduct" src={item.img}></img></Link>
                             <div id="itemStock"><p>{item.unit}</p></div> 
                         </div>
 
@@ -58,7 +46,7 @@ export default function productShort() {
                             <div className="grid" id="g7"></div>
                             <div className="grid" id="itemPrice"><p>{item.price + ' €'}</p></div>
                             <div className="grid" id="g9"></div>
-                            <button onClick={editProduct}  className="button" id="edit"></button>
+                            <Link className="product-link" to={`/EditProduct/${item.id}`}><button className="button" id="edit"></button></Link>
                             <div className="grid" id="g11"></div>
                             <button onClick={() => deleteShort(item.id)}className="button" id="delete"></button>
                             <div className="grid" id="g13"></div>
@@ -74,4 +62,3 @@ export default function productShort() {
         </container>
     )
 }
-
