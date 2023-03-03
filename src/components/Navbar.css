@@ -1,15 +1,16 @@
 #header {
-    margin-top: 11rem;
-    width: 100vw;
+
+    width: 100%;
     font-family: 'Goldman';
 }
 
 .navbar{
     border-color: #E79036 solid 5px;
+    width: 100%;
 }
 
 .search {
-    margin-top: 2.5rem;
+
     width: 15rem;
     height: 2rem;
 }
@@ -22,9 +23,9 @@
     padding: 0%;
 }
 
-@media (min-width: 320px) and (max-width: 760px){
+@media (min-width: 360px) and (max-width: 760px){
     #header{
-        margin-top: -4rem;      
+        /* margin-top: -4rem;       */
     }
     .search {
         margin-top: 3rem;

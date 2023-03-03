@@ -5,6 +5,7 @@ import NewProduct from "../pages/Newproduct";
 import DetailedView from "../pages/DetailedView";
 import EditProduct from "../pages/EditProduct";
 import ProductHandler from '../handler/ProductHandler';
+import DetailView from "../components/DetailView/DetailView";
 
 export const router = createBrowserRouter([
     {

@@ -8,7 +8,7 @@ function HeaderHotBuy() {
       <Navbar bg="light" variant="light">
         <Container>
           <Navbar.Brand href="#HeaderHotBuy">
-            <img alt="" src="../../src/assets/img/logo.png" width="30" height="30" className="d-inline-block align-top"/>{' '}
+            <img alt="" src="../../src/assets/img/logo.png" width="30" height="30" margin="0" className="d-inline-block align-top"/>{' '}
             HOT BUY
           </Navbar.Brand>
         </Container>

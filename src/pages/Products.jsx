@@ -1,17 +1,14 @@
 import ProductShort from "../components/ProductShort";
-import {Link, useLoaderData} from 'react-router-dom'
+import Up_here from "../components/Up_here"
+
 
 
 function Products() { 
-    const {products} = useLoaderData();
+   
     return (
        <>
-        {products.map((p) => (
-            
-           <h1>Cucha tú el {p.name}</h1>
-            
-
-        ))}
+      <Up_here />
+      <ProductShort />
        </> 
     );
  };
