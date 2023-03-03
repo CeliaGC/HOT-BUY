@@ -39,7 +39,7 @@
         width: 100vw;
         margin-top: -20rem;
         font-family: 'Goldman';
-    }
+    }}
 @media (min-width: 360px) and (max-width: 760px){
 
     .search {
