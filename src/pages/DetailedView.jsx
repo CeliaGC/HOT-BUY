@@ -1,5 +1,5 @@
 
-import DetailView from '../components/DetailView/DetailView'
+import DetailView from '../components/DetailView';
 import React from 'react';
 
 const DetailedView = () => { 
