@@ -24,9 +24,7 @@
 }
 
 @media (min-width: 360px) and (max-width: 760px){
-    #header{
-        /* margin-top: -4rem;       */
-    }
+
     .search {
         margin-top: 3rem;
         width: 7rem;
