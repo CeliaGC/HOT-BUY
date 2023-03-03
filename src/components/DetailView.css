@@ -34,6 +34,11 @@ a i.fa-whatsapp {
   align-items: center;
 }
 
+.conteiner{
+  display: flex;
+  flex-direction: row;
+}
+
 #imgProduct {
   margin-right: 3rem;
   border-radius: 10px;
@@ -57,4 +62,11 @@ h4{
 
 p{
   font-size: large;
+}
+
+h3{
+  font-size: medium;
+  color: white;
+  text-transform: uppercase;
+  font-family: 'Goldman';
 }
