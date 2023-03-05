@@ -12,9 +12,8 @@ import DeleteIcon from '@mui/icons-material/Delete';
 import BorderColorIcon from '@mui/icons-material/BorderColor';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import { purple, orange } from '@mui/material/colors';
-import Chip from '@mui/joy/Chip';
 import Up_here from './Up_here'
-import './ProductList.css' 
+
 
 
 
