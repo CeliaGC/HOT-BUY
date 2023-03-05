@@ -7,8 +7,6 @@ import Navbar from 'react-bootstrap/Navbar';
 import { Link } from "react-router-dom"
 import AddCircleOutlineIcon from '@mui/icons-material/AddCircleOutline';
 import './Navbar.css'
-import AddCircleOutlineIcon from '@mui/icons-material/AddCircleOutline';
-import { Filter } from '@mui/icons-material';
 
 
 function NavbarHotBuy() {
