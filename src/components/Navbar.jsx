@@ -58,7 +58,7 @@ function Navbar() {
     if (mediaqueryList.matches){
       return(
         <div>
-        <Box sx={{ flexGrow: 1, border: '#8822D8 solid 10px', width: '100vw' }}>
+        <Box sx={{ flexGrow: 1, border: '#8822D8 solid 10px', width: '100vw'}}>
           <AppBar position="static" >
             <Toolbar style={{backgroundColor: '#CA9FEA', color: 'black', fontFamily: 'Goldman'}}>
             <Link className="add-link" to={`/`}><img alt="" src="../../src/assets/img/logo.png" className="d-inline-block align-top" style={{width:'3rem'}} id='logo'/></Link>
