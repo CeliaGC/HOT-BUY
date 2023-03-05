@@ -12,10 +12,7 @@ import DeleteIcon from '@mui/icons-material/Delete';
 import BorderColorIcon from '@mui/icons-material/BorderColor';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import { purple, orange } from '@mui/material/colors';
-
-
-
-
+import Filter from './Filter'
 
 export default function producList() {
     const [products, setProducts] = useState([])
