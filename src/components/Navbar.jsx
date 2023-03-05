@@ -9,6 +9,8 @@ import '../../src/index.css'
 import { Link } from 'react-router-dom';
 import AddCircleOutlineIcon from '@mui/icons-material/AddCircleOutline';
 import Filter from './Filter'
+import { useState, useEffect } from "react";
+import ProductHandler from "../handler/ProductHandler";
 
 const Search = styled('div')(({ theme }) => ({
   position: 'relative',
@@ -53,6 +55,34 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
 }));
 
 function Navbar() {
+  const [products, setProducts] = useState([]);
+  const [searchValue, setSearchValue] = useState("");
+  console.log({searchValue});
+
+  useEffect(() => {
+    getData();
+  }, []);
+
+  const getData = async () => {
+    const data = await ProductHandler.loadProducts();
+    setProducts(data);
+  }
+
+  const deleteProduct = async (id) => {
+    await ProductHandler.deleteProduct(id);
+    setProducts(products.filter((product) => product.id !== id));
+  }
+
+  const handleSearch = (event) => {
+    setSearchValue(event.target.value.toLowerCase());
+  }
+
+  let filteredProducts = products.filter(product => {
+    return product.name.toLowerCase().includes(searchValue);
+  });
+  console.log({filteredProducts});
+
+
   function mediaquery(){
     let mediaqueryList = window.matchMedia("(max-width: 760px)");
     if (mediaqueryList.matches){
@@ -67,10 +97,12 @@ function Navbar() {
               <SearchIconWrapper>
                 <SearchIcon />
               </SearchIconWrapper>
-              <StyledInputBase
+              <StyledInputBase  
+                onChange={handleSearch}
                 placeholder="Buscar..."
                 inputProps={{ 'aria-label': 'search' }}
               />
+              <Filter />
             </Search>
             </Toolbar>
           </AppBar>
@@ -90,6 +122,7 @@ function Navbar() {
                 <SearchIcon />
               </SearchIconWrapper>
               <StyledInputBase
+                onChange={handleSearch}
                 style={{width:'30rem'}}
                 placeholder="Buscar..."
                 inputProps={{ 'aria-label': 'search' }}
