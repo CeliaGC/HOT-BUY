@@ -5,7 +5,7 @@
 This project is being worked on in the context of a Bootcamp. The goal is to create a Marketplace. Our team has decided to create a desktop and responsive, website for the sale of second-hand products, where customers can publish their products by category, upload images, edit and delete said products.
 
 ## ✏️Mockup:
-<img src="../src/assets/Figma.jpg" alt="Figma" width="50%"> 
+<img src="./src/assets/FigmaF.png" alt="Figma" width="50%"> 
 
 Figma: https://www.figma.com/file/8TYo6YruOMYENwxKBU9GH6/Hot-buy?node-id=0%3A1&t=veLS8sfy03hWeTng-0
 ## 📸Screenshoots:
@@ -23,10 +23,10 @@ Figma: https://www.figma.com/file/8TYo6YruOMYENwxKBU9GH6/Hot-buy?node-id=0%3A1&t
 
 
 ## 👩‍💻Group members:
-+ Celia  (Product Owner) https://github.com/CeliaGC
-+ Rosmery (Scrum Master) https://github.com/rrengelj
++ Celia Garcia  (Product Owner) https://github.com/CeliaGC
++ Rosmery Rengel (Scrum Master) https://github.com/rrengelj
 + Carmen Trillo https://github.com/Carmen-Trillo
-+ Miriam https://github.com/miriamremesal
++ Miriam Remensal https://github.com/miriamremesal
 + Yamila Marquez https://github.com/Milacover
 
 
@@ -47,9 +47,9 @@ npm install
 npm install react-router-dom@6
 ```   
 
-4. Install Bootstrap library
+4. Install MUI library
 ```bash
-npm add bootstrap 
+npm install @mui/material @emotion/react @emotion/styled
 ```
 
 5. Install React Icons
@@ -61,6 +61,10 @@ npm i react-icons
 ```bash
 npm run dev
 ```   
+7. Activate API
+```bash
+json-server --watch ./api/product.json
+``` 
 
 
 ## 📚Methodology:
@@ -71,3 +75,6 @@ npm run dev
 - Solo Programming.
 
 ## 🧪Next Steps:
+- End user list.
+- Add favorites and share.
+- Contact seller.
