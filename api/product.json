@@ -31,7 +31,7 @@
       "description": "Monitor 243V7QDSB/00- 24\", FHD, 75Hz, IPS, Flicker Free, (1920x1080, 250cd/m² VESA, DSUB, HDMI), Color Negro",
       "date": "2023-02-27T18:47:21.377Z",
       "id": 5,
-      "unit":3
+      "unit": 3
     },
     {
       "name": "Cámara Reflex Sony Alpha 6400",
@@ -42,7 +42,7 @@
       "description": "Cámara evil APS-C, objetivo zoom potente Sony 16-50mm f/3.5-5.6 (Enfoque automático rápido 0.02s, 24.2 Megapíxeles, grabación de vídeos en 4K, pantalla inclinable para Vlogging) Negro",
       "date": "2023-02-27T19:00:33.603Z",
       "id": 6,
-      "unit":1
+      "unit": 1
     }
   ]
 }
