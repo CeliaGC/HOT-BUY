@@ -1,0 +1,144 @@
+body {
+    width: 100%;
+    margin: 0;
+    background-color: white;
+    color: rgba(0, 0, 0, 0.807);
+    font-family: Tahoma;
+    font-size: 1rem;
+
+}
+   
+form {
+    width: 60vw;
+    max-width: 40rem;
+    min-width: 20rem;
+    padding-bottom: 2em;
+    margin: 1em auto;
+    font-family: 'Kosugi';
+}
+   
+input, select {
+    display: block;
+    margin: 0.5rem 0;
+    margin: 10px 0 0 0;
+    width: 100%;
+    min-height: 2em;
+    background-color: #CA9FEA;
+    border: 1px solid #D7C9F0;
+    color: #000000;
+    border-radius: 5px;
+    padding-left: 0.8rem;
+}
+
+label{
+  margin-top: 0.8rem;
+}
+
+select {
+  color:rgba(108, 99, 99, 0.807)
+}
+   
+.inline {
+    width: unset;
+    margin: 0 0.5em 0 0;
+    vertical-align: middle;
+}
+   
+input[type="submit"] {
+    display: block;
+    width: 6vw;
+    margin: 1em auto;
+    height: 2em;
+    font-size: 1.1rem;
+    background-color: #7C2E9B;
+    border-color: #D7C9F0;
+    min-width: 300px;
+    border-radius: 5px;
+    color: white;
+    font-family: 'Graduate';
+}
+
+input[type="reset"] {
+    display: block;
+    width: 6vw;
+    margin: 1em auto;
+    height: 2em;
+    font-size: 1.1rem;
+    background-color: #7C2E9B;
+    border-color: #D7C9F0;
+    min-width: 300px;
+    border-radius: 5px;
+    margin-left: 2vw;
+    color: white;
+    font-family: 'Graduate';
+}
+
+input[type="button"] {
+  display: block;
+  width: 6vw;
+  margin: 1em auto;
+  height: 2em;
+  font-size: 1.1rem;
+  background-color: #7C2E9B;
+  border-color: #D7C9F0;
+  min-width: 300px;
+  border-radius: 5px;
+  margin-left: 2vw;
+  color: white;
+  font-family: 'Graduate';
+}
+   
+input[type="file"] {
+    padding: 1px 2px;
+    color:rgba(108, 99, 99, 0.807);
+    border-radius: 5px;
+}
+
+#buttons {
+  display: flex;
+  align-content: center;
+}
+
+#term {
+  display: flex;
+  flex-direction: row;
+}
+
+#term label{
+  margin-top: 0.3rem;
+}
+
+input[type="checkbox"]{
+  width: 1rem;
+}
+
+h2, p{
+  font-family: 'Goldman';
+  font-size: 15px;
+  text-align: center;
+}
+
+h2{
+  text-transform: uppercase;
+}
+
+p{
+  text-transform: capitalize;
+}
+
+@media (min-width: 320px) and (max-width: 760px){
+  
+  #buttons{
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+  }
+
+  input[type="submit"] {
+    margin-bottom: 0%;
+  }
+
+  input[type="checkbox"]{
+    width: 1rem;
+  }
+}

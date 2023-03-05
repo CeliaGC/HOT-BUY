@@ -1,0 +1,69 @@
+a i.fa-whatsapp {
+    color: #25d366;
+    font-size: 2rem;
+    margin-right: 0.5rem;
+  }
+
+  @font-face {
+    font-family: 'Goldman';
+    src: url('./assets/font/Goldman.ttf') format('truetype');
+    font-style: normal;
+    font-weight: normal;
+  }
+  
+  @font-face {
+    font-family: 'Graduate';
+    src: url('./assets/font/Graduate.ttf') format('truetype');
+    font-style: normal;
+    font-weight: normal;
+  }
+  
+  @font-face {
+    font-family: 'Kosugi';
+    src: url('./assets/font/Kosugi.ttf') format('truetype');
+    font-style: normal;
+    font-weight: normal;
+  }
+
+#card{
+  text-align: center;
+  margin: auto;
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+
+#imgProduct {
+  margin-right: 3rem;
+  border-radius: 10px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+}
+
+#back{
+  width: 80%;
+}
+
+h1{
+  font-family: 'Goldman';
+  font-size: xx-large;
+  color: white;
+  text-align: center;
+}
+
+h4{
+  font-size: larger;
+  font-family: 'Goldman'
+}
+
+p{
+  font-size: large;
+}
+
+h3{
+  font-size: medium;
+  color: white;
+  text-transform: uppercase;
+  font-family: 'Goldman';
+}

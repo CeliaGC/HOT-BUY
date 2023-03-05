@@ -1,4 +1,4 @@
-:root {
+/* :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
@@ -66,4 +66,25 @@ button:focus-visible {
   button {
     background-color: #f9f9f9;
   }
+} */
+
+@font-face {
+  font-family: 'Goldman';
+  src: url('./assets/font/Goldman.ttf') format('truetype');
+  font-style: normal;
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: 'Graduate';
+  src: url('./assets/font/Graduate.ttf') format('truetype');
+  font-style: normal;
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: 'Kosugi';
+  src: url('./assets/font/Kosugi.ttf') format('truetype');
+  font-style: normal;
+  font-weight: normal;
 }
