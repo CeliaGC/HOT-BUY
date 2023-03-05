@@ -38,7 +38,7 @@ function Filter() {
 
   let filteredProducts = products.filter(product => {
     return product.name.toLowerCase().includes(searchValue);
-  });  
+  });
   console.log({filteredProducts});
 
   
