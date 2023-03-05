@@ -69,7 +69,6 @@ function Navbar() {
               </SearchIconWrapper>
               <StyledInputBase
                 placeholder="Buscar..."
-                onChange={handleSearch}
                 inputProps={{ 'aria-label': 'search' }}
               />
             </Search>
