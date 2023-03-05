@@ -7,6 +7,7 @@ import Navbar from 'react-bootstrap/Navbar';
 import { Link } from "react-router-dom"
 import './Navbar.css'
 import AddCircleOutlineIcon from '@mui/icons-material/AddCircleOutline';
+import { Filter } from '@mui/icons-material';
 
 
 function NavbarHotBuy() {
@@ -20,15 +21,7 @@ function NavbarHotBuy() {
           <Nav className="me-auto">
           <Link className="add-link" to={`/NewProduct`}><button className="Submit" id="add" style={{backgroundColor:"#7C2E9B", color: "#E79036", fontWeight:"bold"}}><AddCircleOutlineIcon />AÑADIR PRODUCTO</button></Link>
             </Nav>
-          <Form className="d-flex">
-            <Form.Control
-              type="search"
-              placeholder="Buscar producto"
-              className="me-2 search"
-              aria-label="Search"
-            />
-            <Button className="bttn" variant="outline-success">Buscar</Button>
-          </Form>
+         <Filter />
       </Container>
     </Navbar>
     </header>
