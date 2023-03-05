@@ -112,7 +112,7 @@ export default function producList() {
                                 </Typography>
 
                             </AspectRatio>
-                        <Box sx={{display: 'flex'}}>
+
                     
                         <Box sx={{ display: 'flex' }}>
 
