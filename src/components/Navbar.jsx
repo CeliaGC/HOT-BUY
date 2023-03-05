@@ -8,7 +8,7 @@ import SearchIcon from '@mui/icons-material/Search';
 import '../../src/index.css'
 import { Link } from 'react-router-dom';
 import AddCircleOutlineIcon from '@mui/icons-material/AddCircleOutline';
-
+import Filter from './Filter'
 
 const Search = styled('div')(({ theme }) => ({
   position: 'relative',
@@ -63,13 +63,13 @@ function Navbar() {
             <Toolbar style={{backgroundColor: '#CA9FEA', color: 'black', fontFamily: 'Goldman'}}>
             <Link className="add-link" to={`/`}><img alt="" src="../../src/assets/img/logo.png" className="d-inline-block align-top" style={{width:'3rem'}} id='logo'/></Link>
             <Link className="add-link" to={`/NewProduct`}><button className="Submit" id="add" style={{display: 'flex',flexDirection: 'row', borderRadius:'5px', backgroundColor:"#7C2E9B", color: "#E79036", fontSize:'x-small', height: '2rem', marginRight: '0.5rem', marginLeft: '0.5rem', display:'inline-block', width:'8rem'}}><AddCircleOutlineIcon style={{marginRight:'0.5rem'}}/>PRODUCTO</button></Link>
-
             <Search>
               <SearchIconWrapper>
                 <SearchIcon />
               </SearchIconWrapper>
               <StyledInputBase
                 placeholder="Buscar..."
+                onChange={handleSearch}
                 inputProps={{ 'aria-label': 'search' }}
               />
             </Search>
@@ -109,30 +109,4 @@ function Navbar() {
     )
 }
 
-
-
-
 export default Navbar;
-
-
-// function Navbar() {
-//   return (
-//     <>
-//     <header>
-//       <div className="logo">
-//         <Link className="add-link" to={`/`}><img alt="" src="../../src/assets/img/logo.png" className="d-inline-block align-top"/></Link>
-//       </div>
-//       <div id='buttons'>
-//         <div id="addProducts">
-//           <Link className="add-link" to={`/NewProduct`}><button className="Submit" id="add" style={{borderRadius:'5px', backgroundColor:"#7C2E9B", color: "#E79036", fontSize:'x-small', height: '1.9rem', marginTop: '1.2rem', marginLeft: '0.3rem'}}><AddCircleOutlineIcon />PRODUCTO</button></Link>
-//         </div>
-//         <div id="search">
-
-//         </div>
-//       </div>
-//     </header>
-//     </>
-//   );
-// }
-
-// export default Navbar;
