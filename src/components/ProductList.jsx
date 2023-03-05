@@ -12,12 +12,17 @@ import DeleteIcon from '@mui/icons-material/Delete';
 import BorderColorIcon from '@mui/icons-material/BorderColor';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import { purple, orange } from '@mui/material/colors';
+import Chip from '@mui/joy/Chip';
+import Up_here from './Up_here'
+import './ProductList.css' 
+
+
 
 export default function producList() {
     
     const [products, setProducts] = useState([])
-    // const [productsData, setProductsData] = useState(products);
     const [searchValues, setSearchValues] = useState([]);
+
 
     useEffect(() => {
         getData();
@@ -37,8 +42,9 @@ export default function producList() {
 
     const handleSearch = (event) => {
         let searchInput = event.target.value;
-        // setSearchValue(searchInput);
+
         const isChecked = event.target.checked;
+
         if (isChecked) {
             setSearchValues([...searchValues, searchInput]);
         } else {
@@ -49,29 +55,39 @@ export default function producList() {
       
 
     const filteredProducts = products.filter((product) => {
-        // Verifica si al menos una de las categorías seleccionadas coincide con la categoría del producto
+
         return searchValues.filter((value) => product.productStatus === value).length > 0;
+
       });
     
       if(searchValues.length !== 0){
         return (
 
             <>
+             <div style= {{display:"flex", flexDirection:"row", justifyContent: "center", height: 50, }}>
 
-            <div className="block--dashboard">
-                <div className="block--search-container">
+<div style= {{paddingTop: 15, width: "25%", height:"100%", justifyContent:"center", alignContent: "center", backgroundColor: orange[50], borderRadius:5, justifyContent:"space-evenly"}}>
+    <p>MOSTRAR</p>
+</div>
 
-                    <label >Nuevo</label>
-                    <input type="checkbox" onChange={handleSearch} value="Nuevo" />
+<div style={{paddingTop:10, width: "25%", height:"100%", display:"flex", flexDirection:"row", backgroundColor: orange[400], borderRadius:5, border: "solid 3px orange", justifyContent:"space-evenly" }}>
+    <label style={{ fontFamily: "Goldman", margin:0}}>Nuevo</label>
+    <input style={{margin: 0, paddingBottom:10}} type="checkbox" onChange={handleSearch} value="Nuevo" />
+</div>
 
-                    <label >Semi-nuevo</label>
-                    <input type="checkbox" onChange={handleSearch} value="Semi-nuevo"/>
+<div style={{paddingTop:10, width: "25%", height:"100%", display:"flex", flexDirection:"row", backgroundColor: orange[300], borderRadius:5, border: "solid 3px orange", justifyContent:"space-evenly"}}>
+    <label style={{fontFamily: "Goldman", margin:0}}>Semi</label>
+    <input style={{margin: 0, paddingBottom:10}} type="checkbox" onChange={handleSearch} value="Semi-nuevo"/>
+</div>
 
-                    <label >Usado</label>
-                    <input type="checkbox" onChange={handleSearch} value="Usado" />
+<div style={{paddingTop:10, width: "25%", height:"100%", display:"flex", flexDirection:"row", backgroundColor: orange[200], borderRadius:5, border: "solid 3px orange", justifyContent:"space-evenly"}}> 
+    <label style={{fontFamily: "Goldman", margin:0}}>Usado</label>
+    <input style={{margin: 0, paddingBottom:10}} type="checkbox" onChange={handleSearch} value="Usado" />
+</div>    
 
-                 </div>
-            </div>
+</div>
+<Up_here />
+
 
             <Grid container bgcolor="rgba(248, 241, 241, 1)" justifyContent="center" columnGap={5} rowGap={5} paddingBottom={10} width={'100%'}> 
         
@@ -158,21 +174,30 @@ export default function producList() {
 
         <>
 
-            <div className="block--dashboard">
-                <div className="block--search-container">
+            <div style= {{display:"flex", flexDirection:"row", justifyContent: "center", height: 50, }}>
 
-                    <label htmlFor="">Nuevo</label>
-                    <input type="checkbox" onChange={handleSearch} value="Nuevo" />
+                <div style= {{borderBottom:"1px solid orange", paddingTop: 10, width: "25%", height:"100%", justifyContent:"center", alignContent: "center", backgroundColor: orange[50], borderRadius:5, justifyContent:"space-evenly"}}>
+                    <p>MOSTRAR</p>
+                </div>
 
-                    <label htmlFor="">Semi-nuevo</label>
-                    <input type="checkbox" onChange={handleSearch} value="Semi-nuevo"/>
+                <div style={{paddingTop:10, width: "25%", height:"100%", display:"flex", flexDirection:"row", backgroundColor: purple[400], borderRadius:5, border: "solid 3px orange", justifyContent:"space-evenly" }}>
+                    <label style={{ fontFamily: "Goldman", margin:0}}>Nuevo</label>
+                    <input  style={{margin: 0, paddingBottom: 10, width: 25}} type="checkbox" onChange={handleSearch} value="Nuevo" />
+                </div>
 
-                    <label htmlFor="">Usado</label>
-                    <input type="checkbox" onChange={handleSearch} value="Usado" />
+                <div style={{paddingTop:10, width: "25%", height:"100%", display:"flex", flexDirection:"row", backgroundColor: purple[300], borderRadius:5, border: "solid 3px orange", justifyContent:"space-evenly"}}>
+                    <label style={{fontFamily: "Goldman", margin:0}}>Semi</label>
+                    <input style={{margin: 0, paddingBottom:10, width: 25}} type="checkbox" onChange={handleSearch} value="Semi-nuevo"/>
+                </div>
 
-                 </div>
+                <div style={{paddingTop:10, width: "25%", height:"100%", display:"flex", flexDirection:"row", backgroundColor: purple[200], borderRadius:5, border: "solid 3px orange", justifyContent:"space-evenly"}}> 
+                    <label style={{fontFamily: "Goldman", margin:0}}>Usado</label>
+                    <input style={{margin: 0, paddingBottom:10, width: 25}} type="checkbox" onChange={handleSearch} value="Usado" />
+                </div>    
+ 
             </div>
-
+            <Up_here />
+            
             <Grid container bgcolor="rgba(248, 241, 241, 1)" justifyContent="center" columnGap={5} rowGap={5} paddingBottom={10} width={'100%'}> 
         
                 {
