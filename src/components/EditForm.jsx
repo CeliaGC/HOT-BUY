@@ -112,7 +112,7 @@ const FormEditProduct = () => {
                 </select>
 
                 <fieldset>
-                <label for="productPicture">Estado del producto</label>
+                <label for="productPicture">Imagen</label>
                 <input onChange={handleImgChange} id="productPicture" placeholder={product.img} type="file"/>
 
 
