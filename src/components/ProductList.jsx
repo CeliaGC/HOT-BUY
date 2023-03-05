@@ -13,10 +13,6 @@ import BorderColorIcon from '@mui/icons-material/BorderColor';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import { purple, orange } from '@mui/material/colors';
 
-
-
-
-
 export default function producList() {
     const [products, setProducts] = useState([])
 
