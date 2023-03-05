@@ -112,6 +112,8 @@ export default function producList() {
                                 </Typography>
 
                             </AspectRatio>
+                        <Box sx={{display: 'flex'}}>
+                    
                         <Box sx={{ display: 'flex' }}>
 
                             <Link to={`/DetailedView/${item.id}`}>
@@ -122,7 +124,7 @@ export default function producList() {
                                     aria-label="Product Detail"
                                     sx={{ ml: 'auto', fontWeight: 600, color: purple[700] }}
                                     border= "1px solid rgba(231, 144, 54, 1)"
-                                    startIcon={<ExpandMoreIcon />}>
+                                    startIcon={<ExpandMoreIcon />}>VER MÁS
                                 </Button>
                             </Link>
 
