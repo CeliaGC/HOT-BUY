@@ -64,30 +64,29 @@ export default function producList() {
         return (
 
             <>
-             <div style= {{display:"flex", flexDirection:"row", justifyContent: "center", height: 50, }}>
+              <div style= {{display:"flex", flexDirection:"row", justifyContent: "center", height: 50, }}>
 
-<div style= {{paddingTop: 15, width: "25%", height:"100%", justifyContent:"center", alignContent: "center", backgroundColor: orange[50], borderRadius:5, justifyContent:"space-evenly"}}>
-    <p>MOSTRAR</p>
-</div>
+                <div style= {{borderBottom:"1px solid orange", paddingTop: 10, width: "25%", height:"100%", justifyContent:"center", alignContent: "center", backgroundColor: orange[50], borderRadius:5, justifyContent:"space-evenly"}}>
+                    <p>MOSTRAR</p>
+                </div>              
 
-<div style={{paddingTop:10, width: "25%", height:"100%", display:"flex", flexDirection:"row", backgroundColor: orange[400], borderRadius:5, border: "solid 3px orange", justifyContent:"space-evenly" }}>
-    <label style={{ fontFamily: "Goldman", margin:0}}>Nuevo</label>
-    <input style={{margin: 0, paddingBottom:10}} type="checkbox" onChange={handleSearch} value="Nuevo" />
-</div>
+                <div style={{paddingTop:10, width: "25%", height:"100%", display:"flex", flexDirection:"row", backgroundColor: purple[400], borderRadius:5, border: "solid 3px orange", justifyContent:"space-evenly" }}>
+                    <label style={{ fontFamily: "Goldman", margin:0}}>Nuevo</label>
+                    <input  style={{margin: 0, paddingBottom: 10, width: 25}} type="checkbox" onChange={handleSearch} value="Nuevo" />
+                </div>              
 
-<div style={{paddingTop:10, width: "25%", height:"100%", display:"flex", flexDirection:"row", backgroundColor: orange[300], borderRadius:5, border: "solid 3px orange", justifyContent:"space-evenly"}}>
-    <label style={{fontFamily: "Goldman", margin:0}}>Semi</label>
-    <input style={{margin: 0, paddingBottom:10}} type="checkbox" onChange={handleSearch} value="Semi-nuevo"/>
-</div>
+                <div style={{paddingTop:10, width: "25%", height:"100%", display:"flex", flexDirection:"row", backgroundColor: purple[300], borderRadius:5, border: "solid 3px orange", justifyContent:"space-evenly"}}>
+                    <label style={{fontFamily: "Goldman", margin:0}}>Semi</label>
+                    <input style={{margin: 0, paddingBottom:10, width: 25}} type="checkbox" onChange={handleSearch} value="Semi-nuevo"/>
+                </div>              
 
-<div style={{paddingTop:10, width: "25%", height:"100%", display:"flex", flexDirection:"row", backgroundColor: orange[200], borderRadius:5, border: "solid 3px orange", justifyContent:"space-evenly"}}> 
-    <label style={{fontFamily: "Goldman", margin:0}}>Usado</label>
-    <input style={{margin: 0, paddingBottom:10}} type="checkbox" onChange={handleSearch} value="Usado" />
-</div>    
+                <div style={{paddingTop:10, width: "25%", height:"100%", display:"flex", flexDirection:"row", backgroundColor: purple[200], borderRadius:5, border: "solid 3px orange", justifyContent:"space-evenly"}}> 
+                    <label style={{fontFamily: "Goldman", margin:0}}>Usado</label>
+                    <input style={{margin: 0, paddingBottom:10, width: 25}} type="checkbox" onChange={handleSearch} value="Usado" />
+                </div>                  
 
-</div>
-<Up_here />
-
+                </div>
+                <Up_here />             
 
             <Grid container bgcolor="rgba(248, 241, 241, 1)" justifyContent="center" columnGap={5} rowGap={5} paddingBottom={10} width={'100%'}> 
         
