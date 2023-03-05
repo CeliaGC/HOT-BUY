@@ -13,7 +13,7 @@ export const ProductHandler = {
             "img": newProduct.productPicture,
             "category": newProduct.category,
             "productStatus": newProduct.productState,
-            "unit": newProduct.unit,
+            "unit": newProduct.units,
             "description": newProduct.description,
             "date": new Date(),
             "id": ""
@@ -49,7 +49,15 @@ export const ProductHandler = {
         }
 
         return ProductService.updateProduct(id, updatedProductStructure);
-    }
+    },
+    async fetchProducts() {
+        const products = await ProductHandler.loadProducts();
+        return { products };
+    },
+    async fetchProduct({ params }) {
+        const product = await ProductHandler.loadProduct(params.id);
+        return { product };
+    },
 }
 
 export default ProductHandler

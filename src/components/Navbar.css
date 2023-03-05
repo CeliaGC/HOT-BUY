@@ -1,15 +1,27 @@
+*{
+    margin:0%;
+    padding: 0%;
+    
+}
+
 #header {
-    margin-top: 11rem;
     width: 100vw;
+
+    width: 100%;
     font-family: 'Goldman';
 }
 
 .navbar{
     border-color: #E79036 solid 5px;
+    width: 100%;
+}
+
+.navbar img{
+    width: 6rem;
 }
 
 .search {
-    margin-top: 2.5rem;
+
     width: 15rem;
     height: 2rem;
 }
@@ -23,9 +35,13 @@
 }
 
 @media (min-width: 320px) and (max-width: 760px){
-    #header{
-        margin-top: -4rem;      
-    }
+    #header {
+        width: 100vw;
+        margin-top: -20rem;
+        font-family: 'Goldman';
+    }}
+@media (min-width: 360px) and (max-width: 760px){
+
     .search {
         margin-top: 3rem;
         width: 7rem;
