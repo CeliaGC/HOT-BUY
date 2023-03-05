@@ -4,8 +4,11 @@ import Button from 'react-bootstrap/Button';
 import { useLoaderData } from "react-router-dom";
 import ProductHandler from "../handler/ProductHandler";
 import { Link } from "react-router-dom"
-import './Form.css'
+import Navbar from './Navbar'
+import './EditForm.css'
 import '../../src/index.css'
+
+
 
 const FormEditProduct = () => { 
         const { product } = useLoaderData();
@@ -48,6 +51,7 @@ const FormEditProduct = () => {
             let unitInput = event.target.value;
             setUnit(unitInput);
         };
+
         const handleDescriptionChange = (event) => {
             let descriptionInput = event.target.value;
             setDescription(descriptionInput);
@@ -71,7 +75,7 @@ const FormEditProduct = () => {
 
     return (
         <>
-        <h2>estás editando el producto:</h2>
+        <h2>Estás editando el producto:</h2>
             <p>{product.name}</p>
         <form onSubmit={handleSubmit}>
             <fieldset>
@@ -94,7 +98,7 @@ const FormEditProduct = () => {
                 <input onChange={handlePriceChange} id="price" placeholder={product.price} />
                 
                 <label for="units">Unidades del producto</label>
-                <input onChange={handleUnitChange} id="units" placeholder={product.unit} />
+                <input onChange={handleUnitChange} id="units" type={'number'} placeholder={product.unit} />
                 
                 <label for="description">Descripción del producto</label>
                 <input onChange={handleDescriptionChange} id="description" placeholder={product.description} />
@@ -116,7 +120,7 @@ const FormEditProduct = () => {
             </fieldset>
             <div id="buttons">
             <input onClick={handleAgregarClick} id="submit" type="submit" value="ACTUALIZAR" />
-            <Link to="/Products" className="nav--item"><input id="back" type="button" value="VOLVER" /></Link>
+            <Link to="/" className="nav--item"><input id="back" type="button" value="VOLVER" /></Link>
             </div>
 
             <Alert show={showAlert} variant="success" onClose={handleAlertClose} dismissible>

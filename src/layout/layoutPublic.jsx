@@ -4,12 +4,12 @@ import Footer from "../components/Footer";
 
 const LayoutPublic = () => {
 
-    const navigation = useNavigation()
+    // const navigation = useNavigation()
 
     return (
         <>
             <Navbar />
-            <Outlet />         
+            <Outlet />
             <Footer />
         </>
     );
