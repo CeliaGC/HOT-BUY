@@ -13,54 +13,118 @@ import BorderColorIcon from '@mui/icons-material/BorderColor';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import { purple, orange } from '@mui/material/colors';
 import Up_here from './Up_here'
+import InputBase from '@mui/material/InputBase';
+import SearchIcon from '@mui/icons-material/Search';
+import { styled, alpha } from '@mui/material/styles';
 
+const Search = styled('div')(({ theme }) => ({
+    position: 'relative',
+    borderRadius: theme.shape.borderRadius,
+    backgroundColor: alpha(theme.palette.common.white, 0.15),
+    '&:hover': {
+      backgroundColor: alpha(theme.palette.common.white, 0.25),
+    },
+    marginLeft: 0,
+    width: '100%',
+    [theme.breakpoints.up('sm')]: {
+      marginLeft: theme.spacing(1),
+      width: 'auto',
+    },
+  }));
+  
+  const SearchIconWrapper = styled('div')(({ theme }) => ({
+    padding: theme.spacing(0, 2),
+    height: '100%',
+    position: 'absolute',
+    pointerEvents: 'none',
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+  }));
+  
+  const StyledInputBase = styled(InputBase)(({ theme }) => ({
+    color: 'inherit',
+    '& .MuiInputBase-input': {
+      padding: theme.spacing(1, 1, 1, 0),
+      // vertical padding + font size from searchIcon
+      paddingLeft: `calc(1em + ${theme.spacing(4)})`,
+      transition: theme.transitions.create('width'),
+      width: '100%',
+      [theme.breakpoints.up('sm')]: {
+        width: '12ch',
+        '&:focus': {
+          width: '20ch',
+        },
+      },
+    },
+  }));
 
+export default function ProductList() {
 
+  const [products, setProducts] = useState([]);
+  const [searchValues, setSearchValues] = useState([]);
+  const [searchValue, setSearchValue] = useState("");
+  const [filteredProducts, setFilteredProducts] = useState(products);
 
-export default function producList() {
-    
-    const [products, setProducts] = useState([])
-    const [searchValues, setSearchValues] = useState([]);
+  console.log({searchValue});
 
+  useEffect(() => {
+    getData();
+  }, []);
 
-    useEffect(() => {
-        getData();
-    },[]);
-
-    const getData = async () => {
-        const data = await ProductHandler.loadProducts();
-        setProducts(data)
-    }
-
-    const deleteShort = async (id) => {
-        
-        setProducts(products.filter((p) => p.id !== id));
-        await ProductHandler.deleteProduct(id)
-        
-    }
-
-    const handleSearch = (event) => {
-        let searchInput = event.target.value;
-
-        const isChecked = event.target.checked;
-
-        if (isChecked) {
-            setSearchValues([...searchValues, searchInput]);
-        } else {
-            setSearchValues(searchValues.filter(val => val !== searchInput));
-        }
+  useEffect(() => {
+    let filteredProducts = products.filter(product => {
+      let matchSearchValue = product.name.toLowerCase().includes(searchValue);
+      let matchCheckboxValue = true;
       
+      if (searchValues.length > 0) {
+        matchCheckboxValue = searchValues.includes(product.productStatus); 
       }
-      
+      if (searchValues.length === 0) {
+        return matchSearchValue;
+      } 
+      else {
+        return matchSearchValue && matchCheckboxValue;
+      }
+    });
+  
+    setFilteredProducts(filteredProducts);
+  }, [products, searchValue, searchValues]);
+  
+  
 
-    const filteredProducts = products.filter((product) => {
+  const getData = async () => {
+    const data = await ProductHandler.loadProducts();
+    setProducts(data);
+  };
 
-        return searchValues.filter((value) => product.productStatus === value).length > 0;
+  const deleteShort = async (id) => {
+    setProducts(products.filter((p) => p.id !== id));
+    await ProductHandler.deleteProduct(id);
+  };
 
-      });
+  const handleCheckBox = (event) => {
+    let searchInput = event.target.value;
+
+    const isChecked = event.target.checked;
+
+    if (isChecked) {
+      setSearchValues([...searchValues, searchInput]);
+    } else {
+      setSearchValues(searchValues.filter(val => val !== searchInput));
+    }
+  }
+
+  const handleSearch = (event) => {
+    setSearchValue(event.target.value.toLowerCase());
+  }
+
+  console.log({filteredProducts})
     
-      if(searchValues.length !== 0){
+      if(searchValues.length !== 0 || searchValue.length !== 0){
         return (
+
+
 
             <>
               <div style= {{display:"flex", flexDirection:"row", justifyContent: "center", height: 50, }}>
@@ -71,20 +135,34 @@ export default function producList() {
                         
                 <div style={{paddingTop:10, width: "25%", height:"100%", display:"flex", flexDirection:"row", backgroundColor: purple[400], borderRadius:5, borderBottom: "solid 3px orange", justifyContent:"space-evenly" }}>
                     <label style={{ fontFamily: "Goldman", margin:0}}>Nuevo</label>
-                    <input  style={{margin: 0, paddingBottom: 10, width: 25}} type="checkbox" onChange={handleSearch} value="Nuevo" />
+                    <input  style={{margin: 0, paddingBottom: 10, width: 25}} type="checkbox" onChange={handleCheckBox} value="Nuevo" />
                 </div>
                         
                 <div style={{paddingTop:10, width: "25%", height:"100%", display:"flex", flexDirection:"row", backgroundColor: purple[300], borderRadius:5, borderBottom: "solid 3px orange", justifyContent:"space-evenly"}}>
                     <label style={{fontFamily: "Goldman", margin:0}}>Semi</label>
-                    <input style={{margin: 0, paddingBottom:10, width: 25}} type="checkbox" onChange={handleSearch} value="Semi-nuevo"/>
+                    <input style={{margin: 0, paddingBottom:10, width: 25}} type="checkbox" onChange={handleCheckBox} value="Semi-nuevo"/>
                 </div>
                         
                 <div style={{paddingTop:10, width: "25%", height:"100%", display:"flex", flexDirection:"row", backgroundColor: purple[200], borderRadius:5, borderBottom: "solid 3px orange", justifyContent:"space-evenly"}}> 
                     <label style={{fontFamily: "Goldman", margin:0}}>Usado</label>
-                    <input style={{margin: 0, paddingBottom:10, width: 25}} type="checkbox" onChange={handleSearch} value="Usado" />
+                    <input style={{margin: 0, paddingBottom:10, width: 25}} type="checkbox" onChange={handleCheckBox} value="Usado" />
                 </div>    
                         
                 </div>
+                <div className="block--search-container">
+                    <Search >
+                        <SearchIconWrapper>
+                            <SearchIcon />
+                        </SearchIconWrapper>
+                        <StyledInputBase
+                            onChange={handleSearch}
+                            style={{width:'30rem'}}
+                            placeholder="Buscar..."
+                            inputProps={{ 'aria-label': 'search' }}
+                        />
+                    </Search>
+                    </div>         
+
                 <Up_here />             
 
             <Grid container bgcolor="rgba(248, 241, 241, 1)" justifyContent="center" columnGap={5} rowGap={5} paddingBottom={10} width={'100%'}> 
@@ -182,20 +260,34 @@ export default function producList() {
 
                 <div style={{paddingTop:10, width: "25%", height:"100%", display:"flex", flexDirection:"row", backgroundColor: purple[400], borderRadius:5, borderBottom: "solid 3px orange", justifyContent:"space-evenly" }}>
                     <label style={{ fontFamily: "Goldman", margin:0}}>Nuevo</label>
-                    <input  style={{margin: 0, paddingBottom: 10, width: 25}} type="checkbox" onChange={handleSearch} value="Nuevo" />
+                    <input  style={{margin: 0, paddingBottom: 10, width: 25}} type="checkbox" onChange={handleCheckBox} value="Nuevo" />
                 </div>
 
                 <div style={{paddingTop:10, width: "25%", height:"100%", display:"flex", flexDirection:"row", backgroundColor: purple[300], borderRadius:5, borderBottom: "solid 3px orange", justifyContent:"space-evenly"}}>
                     <label style={{fontFamily: "Goldman", margin:0}}>Semi</label>
-                    <input style={{margin: 0, paddingBottom:10, width: 25}} type="checkbox" onChange={handleSearch} value="Semi-nuevo"/>
+                    <input style={{margin: 0, paddingBottom:10, width: 25}} type="checkbox" onChange={handleCheckBox} value="Semi-nuevo"/>
                 </div>
 
                 <div style={{paddingTop:10, width: "25%", height:"100%", display:"flex", flexDirection:"row", backgroundColor: purple[200], borderRadius:5, borderBottom: "solid 3px orange", justifyContent:"space-evenly"}}> 
                     <label style={{fontFamily: "Goldman", margin:0}}>Usado</label>
-                    <input style={{margin: 0, paddingBottom:10, width: 25}} type="checkbox" onChange={handleSearch} value="Usado" />
+                    <input style={{margin: 0, paddingBottom:10, width: 25}} type="checkbox" onChange={handleCheckBox} value="Usado" />
                 </div>    
  
             </div>
+            <div className="block--search-container">
+                    <Search >
+                        <SearchIconWrapper>
+                            <SearchIcon />
+                        </SearchIconWrapper>
+                        <StyledInputBase
+                            onChange={handleSearch}
+                            style={{width:'30rem'}}
+                            placeholder="Buscar..."
+                            inputProps={{ 'aria-label': 'search' }}
+                        />
+                    </Search>
+                    </div>
+
             <Up_here />
             
             <Grid container bgcolor="rgba(248, 241, 241, 1)" justifyContent="center" columnGap={5} rowGap={5} paddingBottom={10} width={'100%'}> 

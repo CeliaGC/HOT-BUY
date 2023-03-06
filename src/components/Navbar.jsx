@@ -8,7 +8,7 @@ import SearchIcon from '@mui/icons-material/Search';
 import '../../src/index.css'
 import { Link } from 'react-router-dom';
 import AddCircleOutlineIcon from '@mui/icons-material/AddCircleOutline';
-import Filter from './Filter'
+
 
 const Search = styled('div')(({ theme }) => ({
   position: 'relative',
@@ -63,7 +63,7 @@ function Navbar() {
             <Toolbar style={{backgroundColor: '#CA9FEA', color: 'black', fontFamily: 'Goldman'}}>
             <Link className="add-link" to={`/`}><img alt="" src="../../src/assets/img/logo.png" className="d-inline-block align-top" style={{width:'3rem'}} id='logo'/></Link>
             <Link className="add-link" to={`/NewProduct`}><button className="Submit" id="add" style={{display: 'flex',flexDirection: 'row', borderRadius:'5px', backgroundColor:"#7C2E9B", color: "#E79036", fontSize:'x-small', height: '2rem', marginRight: '0.5rem', marginLeft: '0.5rem', display:'inline-block', width:'8rem'}}><AddCircleOutlineIcon style={{marginRight:'0.5rem'}}/>PRODUCTO</button></Link>
-            <Search>
+            {/* <Search>
               <SearchIconWrapper>
                 <SearchIcon />
               </SearchIconWrapper>
@@ -71,7 +71,7 @@ function Navbar() {
                 placeholder="Buscar..."
                 inputProps={{ 'aria-label': 'search' }}
               />
-            </Search>
+            </Search> */}
             </Toolbar>
           </AppBar>
         </Box>
@@ -85,7 +85,7 @@ function Navbar() {
             <Link className="add-link" to={`/`}><img alt="" src="../../src/assets/img/logo.png" className="d-inline-block align-top" style={{width:'6rem'}} id='logo'/></Link>
             <Link className="add-link" to={`/NewProduct`}><button className="Submit" id="add" style={{display: 'flex',flexDirection: 'row', borderRadius:'5px', backgroundColor:"#7C2E9B", color: "#E79036", fontSize:'large', height: '3rem', marginRight: '3rem', marginLeft: '3rem', display:'inline-block', width:'12rem'}}><AddCircleOutlineIcon style={{marginRight:'0.5rem'}}/>PRODUCTO</button></Link>
 
-            <Search >
+            {/* <Search >
               <SearchIconWrapper>
                 <SearchIcon />
               </SearchIconWrapper>
@@ -94,7 +94,7 @@ function Navbar() {
                 placeholder="Buscar..."
                 inputProps={{ 'aria-label': 'search' }}
               />
-            </Search>
+            </Search> */}
             </Toolbar>
           </AppBar>
         </Box>
