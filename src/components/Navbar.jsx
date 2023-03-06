@@ -82,7 +82,6 @@ function Navbar() {
   });
   console.log({filteredProducts});
 
-
   function mediaquery(){
     let mediaqueryList = window.matchMedia("(max-width: 760px)");
     if (mediaqueryList.matches){
@@ -102,7 +101,6 @@ function Navbar() {
                 placeholder="Buscar..."
                 inputProps={{ 'aria-label': 'search' }}
               />
-              <Filter />
             </Search>
             </Toolbar>
           </AppBar>

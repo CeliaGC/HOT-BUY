@@ -5,7 +5,7 @@ import Filter from "./Filter"
 export default function productShort() {
   return(
     <>
-    <Filter />
+    {/* <Filter /> */}
     <ProductList />
     </>
   )
