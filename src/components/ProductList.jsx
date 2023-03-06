@@ -325,7 +325,7 @@ export default function ProductList() {
                                         aria-label="Product Detail"
                                         sx={{ ml: 'auto', fontWeight: 600, color: purple[700] }}
                                         border= "1px solid rgba(231, 144, 54, 1)"
-                                        startIcon={<ExpandMoreIcon />}>
+                                        startIcon={<ExpandMoreIcon />}>VER MÁS
                                     </Button>
                                 </Link>
 
