@@ -39,20 +39,23 @@ git clone https://github.com/Milacover/HOT-BUY
 
 2. Install dependencies
 ```bash
-npm install
+npm i
 ```
 
-3. Install React Router
+3. Step 2 must install all the dependences needed, in case some dependences don't work, theese are the commands to install
+   each one:
+
+Router
 ```bash
 npm install react-router-dom@6
 ```   
 
-4. Install MUI library
+Styles library
 ```bash
 npm install @mui/material @emotion/react @emotion/styled
 ```
 
-5. Install React Icons
+Icons library
 ```bash
 npm i react-icons
 ```
@@ -61,7 +64,7 @@ npm i react-icons
 ```bash
 npm run dev
 ```   
-7. Activate API
+7. Activate Json server
 ```bash
 json-server --watch ./api/product.json
 ``` 
