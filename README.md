@@ -80,4 +80,4 @@ json-server --watch ./api/product.json
 ## 🧪Next Steps:
 - End user list.
 - Add favorites and share.
-- Contact seller.
+- Contact seller....
