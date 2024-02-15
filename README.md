@@ -60,11 +60,11 @@ Icons library
 npm i react-icons
 ```
 
-6. Activate the server and keep this terminal open
+4. Activate the server and keep this terminal open
 ```bash
 npm run dev
 ```   
-7. Activate Json server
+5. Activate Json server
 ```bash
 json-server --watch ./api/product.json
 ``` 
